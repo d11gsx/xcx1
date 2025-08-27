@@ -1,0 +1,99 @@
+<!--pages/my/my.wxml-->
+<!-- 自定义状态栏 -->
+<cover-bulr-nav scrollTopHightX="{{scrollTopHightX}}" statusBarHeight="{{statusBarHeight}}" logo="{{logo}}" icon="{{icon}}"></cover-bulr-nav>
+
+<!-- /* 背景图片 */ -->
+<view class="cover-bg-view">
+  <image src="../../images/bg_person.png" class="fengrui-img" mode="aspectFill"></image>
+</view>
+
+<!-- 用户 -->
+<view class="self-w">
+  <view class="self-user-img">
+    <image class="fengrui-img" src="../../images/user.png" style="{{vip == false ? 'filter: grayscale(100%)':'filter: grayscale(0%)'}}" mode="aspectFill"></image>
+    <image class="self-user-img-vip" wx:if="{{isUser}}" src="{{ vip == false ? '../../images/blue-vip.svg':'../../images/yellow-vip.svg'}}" mode="aspectFill"/>
+  </view>
+  <view class="self-user-info">
+    <view class="self-user-info-name" wx:if="{{isUser}}">
+      {{lmUserInfo.username}}
+    </view>
+    <view class="self-user-info-name" wx:else="" bind:tap="isLogin">
+      点击登录 
+    </view>
+    <view class="self-user-info-describe" wx:if="{{isUser}}">
+      <text class="self-user-vip">VIP:{{lmUserInfo.vipTime}}</text>
+      <text class="self-user-uid self-user-vip">UID: {{lmUserInfo.id}}</text>
+    </view>
+  </view>
+</view>
+
+<!-- 用户组 -->
+<view class="user-ground">
+  <view class="user-ground-font">用户组别:<text class="user-ground-content">{{ vip == false ? '普通组':'SVIP组' }}</text></view>
+  <view class="user-ground-font">免费次数:<text class="user-ground-content">{{ vip == false ? '未累计':'无限次数' }}</text></view>
+  <view class="user-ground-btn" bind:tap="openVip" wx:if="{{vip==false}}">升权</view>
+</view>
+
+<!-- 基础金刚区 -->
+<view class="title" style="margin-top:60rpx;">基础</view>
+<view class="group-icon-view">
+  <button class="group-icon-item" open-type="contact">
+    <view class="group-icon-icon">
+      <image class="fengrui-img" src="../../images/Bag.png" mode="widthFix" />
+    </view>
+    <view class="group-icon-text">
+      联系客服
+    </view>
+  </button>
+  <button class="group-icon-item" bind:tap="aboutTap">
+    <view class="group-icon-icon">
+      <image class="fengrui-img" src="../../images/about.png" mode="widthFix" />
+    </view>
+    <view class="group-icon-text">
+      关于我们
+    </view>
+  </button>
+
+  <button class="group-icon-item" bind:tap="attendviImgTap" wx:if="{{wxSet.attendviImg != null}}">
+    <view class="group-icon-icon">
+      <image class="fengrui-img" src="../../images/attention.png" mode="widthFix" />
+    </view>
+    <view class="group-icon-text">
+      关注官方
+    </view>
+  </button>
+</view>
+
+<!-- 功能金刚区 -->
+<view class="title" style="margin-top:60rpx;">功能</view>
+<view class="group-icon-view">
+  <button class="group-icon-item" bind:tap="getLockUser">
+    <view class="group-icon-icon">
+      <image class="fengrui-img" src="../../images/lock.png" mode="widthFix" />
+    </view>
+    <view class="group-icon-text">
+      刷新状态
+    </view>
+  </button>
+  <button class="group-icon-item" bind:tap="clearTap">
+    <view class="group-icon-icon">
+      <image class="fengrui-img" src="../../images/Folder.png" mode="widthFix" />
+    </view>
+    <view class="group-icon-text">
+      清理缓存
+    </view>
+  </button>
+  <button class="group-icon-item" bind:tap="clearTap">
+    <view class="group-icon-icon">
+      <image class="fengrui-img" src="../../images/Setting.png" mode="widthFix" />
+    </view>
+    <view class="group-icon-text">
+      退出登录
+    </view>
+  </button>
+</view>
+
+<!-- 广告AD -->
+<view wx:if="{{wxSet.adSwitch == true  && vip == false}}" style="margin:28rpx;">
+  <ad unit-id="{{wxSet.videoAd}}" ad-type="video" />
+</view>

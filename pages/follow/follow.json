@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "cover-bulr-nav":"../../components/cover-bulr-nav/cover-bulr-nav"
+  },
+  "navigationStyle":"custom"
+}

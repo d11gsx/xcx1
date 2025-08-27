@@ -1,0 +1,72 @@
+/* pages/about/about.wxss */
+/* logo */
+.logo {
+  width: 320rpx;
+  height: 120rpx;
+  border-radius: 40rpx;
+  overflow: hidden;
+  margin: 350rpx auto 52rpx auto;
+}
+
+/* 名称 */
+.name-title {
+  font-size: 60rpx;
+  text-align: center;
+  position: relative;
+  margin: auto;
+  display: table;
+  font-weight: bold;
+}
+
+.name-v {
+  position: absolute;
+  top: 10rpx;
+  right: -130rpx;
+  padding: 0rpx 26rpx;
+  height: 44rpx;
+  line-height: 44rpx;
+  border-radius: 100rpx;
+  background: rgba(59, 104, 255, 1);
+  color: #fff;
+  font-size: 24rpx;
+}
+
+/* 描述 */
+.desrc{
+  margin: 78rpx 68rpx;
+  line-height: 54rpx;
+  z-index: 9;
+  text-align: justify;
+  font-size: 30rpx;
+}
+/* foot */
+.foot{
+  margin:80rpx 0;
+  padding-bottom: 80rpx;
+  line-height: 60rpx;
+  text-align: center;
+  color:#ADADAD;
+  font-size: 26rpx;
+}
+
+.waterfall {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 0.25em; 
+  grid-auto-flow: row dense;
+  grid-auto-rows: 20px; 
+}
+.waterfall .item {
+  width: 100%;
+  background: #222;
+  color: #ddd;
+}
+.waterfall .item:nth-of-type(3n+1) {
+  grid-row: auto / span 5;
+}
+.waterfall .item:nth-of-type(3n+2) {
+  grid-row: auto / span 6;
+}
+.waterfall .item:nth-of-type(3n+3) {
+  grid-row: auto / span 8;
+}

@@ -1,0 +1,5 @@
+<!--components/cover-bulr-bg/cover-bulr-bg.wxml-->
+<!-- 全屏加载 -->
+<view class="cover_bar_srcoll cover_bulr_bg" catchtouchmove="true">
+  <view class="custom-loader"></view>
+</view>

@@ -1,0 +1,20 @@
+<!--pages/follow/follow.wxml-->
+<!-- 自定义状态栏 -->
+<cover-bulr-nav scrollTopHightX="{{scrollTopHightX}}" statusBarHeight="{{statusBarHeight}}" logo="{{logo}}" icon="{{icon}}"></cover-bulr-nav>
+
+<!-- /* 背景图片 */ -->
+<view class="cover-bg-view">
+  <image src="../../images/bg_person.png" class="fengrui-img" mode="aspectFill"></image>
+</view>
+
+<!-- 占位 -->
+<view style="height: 300rpx;"></view>
+
+<view class="follow-pos" wx:for="{{wxSet.attendviImg}}" wx:key="index">
+  <view class="follow-title">
+    {{item.title}}
+  </view>
+  <view class="follow-img">
+    <image class="fengrui-img" show-menu-by-longpress="true" src="{{item.url}}" mode="widthFix" />
+  </view>
+</view>

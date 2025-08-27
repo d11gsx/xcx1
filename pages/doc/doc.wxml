@@ -1,0 +1,75 @@
+<!--pages/doc/doc.wxml-->
+<!-- 自定义状态栏 -->
+<cover-bulr-nav scrollTopHightX="{{scrollTopHightX}}" statusBarHeight="{{statusBarHeight}}" logo="{{logo}}" icon="{{icon}}" vip="{{vip}}"></cover-bulr-nav>
+
+<!-- /* 背景图片 */ -->
+<view class="cover-bg-view">
+  <image src="../../images/bg_person.png" class="fengrui-img" mode="aspectFill"></image>
+</view>
+
+<!-- 标题 -->
+<view class="title doc-ma-title">{{doc.attributes.title}}</view>
+
+<!-- 公告 -->
+<view class="notice" wx:if="{{doc.attributes.notice != null}}">
+  <text class="notice-h">公告：</text>{{doc.attributes.notice}}
+</view>
+<view class="describe" wx:if="{{doc.attributes.desrc != null}}">
+  {{doc.attributes.desrc}}
+</view>
+
+<!-- 文档内容 -->
+<block wx:if="{{isShow}}">
+  <view class="issue-ad-view" bindtap="getVideoAd">
+    <view class="issue-ad-img">
+      <image class="fengrui-img" src="../../images/video-ad.svg" mode="aspectFill" />
+    </view>
+    <view class="issue-ad-desrc">
+      <view>查看作品发行版本以及更新说明</view>需您观看激励视频广告
+    </view>
+    <view class="detail-btn" style="margin-top: 0rpx;margin-bottom: 48rpx;position: initial;">
+      <image class="detail-icon" src="../../images/ad_video.svg" mode="aspectFill" />
+      广告查看
+    </view>
+  </view>
+</block>
+
+<block wx:else="">
+  <view class="doc-content" wx:if="{{doc.attributes.list.length == 1}}">
+    <mp-html content="{{doc.attributes.list[0].content}}" markdown="true" selectable="force" tag-style="{{tagStyle}}" scroll-table="{{scrollTable}}" />
+    <block wx:if="{{wxSet.adSwitch == true  && vip == false}}">
+      <ad ad-type="video" style="width: 90%;" unit-id="{{wxSet.videoAd}}" style="overflow: hidden;" />
+    </block>
+    <view style="height: 200rpx;"></view>
+  </view>
+
+  <!-- 文档列表 -->
+  <view class="" wx:else="">
+    <view class="scroll-view-sticky" style="top: {{42+statusBarHeight}}px;">
+      <scroll-view class="scroll-view" enhanced scroll-x enable-passive="true" show-scrollbar="false" scroll-with-animation="true" scroll-into-view="{{swID}}">
+        <view wx:for="{{doc.attributes.list}}" data-swipe="{{'sw' + index}}" data-indx="{{index}}" wx:key="index" class="{{ index == active ? 'scroll-view-item scroll-view-ac':'scroll-view-item'}}" bindtap="tabTap" id="{{'sw' + index}}">
+          {{item.title}}
+        </view>
+      </scroll-view>
+    </view>
+      <block wx:for="{{doc.attributes.list}}" wx:key="index">
+        <view class="doc-content {{'sw' + index}}" id="{{'sw' + index}}" >
+          <mp-html content="{{item.content}}" markdown="true" selectable="force" tag-style="{{tagStyle}}" scroll-table="{{scrollTable}}" />
+          <block wx:if="{{wxSet.adSwitch == true  && vip == false}}">
+            <ad ad-type="video" style="width: 90%;" unit-id="{{wxSet.videoAd}}" style="overflow: hidden;" />
+          </block>
+        </view>
+      </block>
+      <view style="height: 200rpx;"></view>
+    </view>
+</block>
+
+<!-- 相关附件 -->
+<view class="bound-view" wx:if="{{doc.attributes.post.data != null || doc.attributes.web != null}}">
+  <view class="bound-img" style="height: 60rpx;width: 60rpx;" wx:if="{{doc.attributes.post.data != null}}" bind:tap="infoTap" data-id="{{doc.attributes.post.data.id}}">
+    <image src="../../images/down.svg" class="fengrui-img" mode="aspectFill" />
+  </view>
+  <view class="bound-img" bind:tap="webTap" style="height: 56rpx;width: 56rpx;" wx:if="{{doc.attributes.web != null}}">
+    <image src="../../images/renking-1.svg" class="fengrui-img" mode="aspectFill" />
+  </view>
+</view>

@@ -1,0 +1,54 @@
+/* pages/docsType/docsType.wxss */
+/* 背景图片 */
+.cover-bg-view{
+  height: 600rpx;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+/* .案例区 */
+.swiper-h{
+  margin-top: 50rpx;
+  padding: 36rpx;
+}
+.swiper-title {
+  font-size: 60rpx;
+  font-weight: bold;
+}
+
+.swiper-desrc {
+  margin: 40rpx auto;
+  font-size: 26rpx;
+}
+.swiper-case {
+  height: 380rpx;
+}
+
+
+
+/* 标题 */
+.ds-felx {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+.scroll-view {
+  height: 100rpx;
+  white-space: nowrap;
+}
+
+.scroll-view-icon {
+  height: 54rpx;
+  width: 54rpx;
+  margin-right: 8rpx;
+  vertical-align: middle;
+}
+
+
+/* page{
+  background-color: #f7f7f7;
+} */

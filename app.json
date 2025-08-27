@@ -1,0 +1,29 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/info/info",
+    "pages/about/about",
+    "pages/lists/lists",
+    "pages/category/category",
+    "pages/follow/follow",
+    "pages/web/web",
+    "components/cover-bulr-bg/cover-bulr-bg",
+    "pages/login/login",
+    "pages/my/my",
+    "pages/doc/doc",
+    "pages/wallcover/wallcover",
+    "pages/postType/postType",
+    "pages/topic/topic",
+    "pages/brush/brush",
+    "pages/speech/speech",
+    "pages/redenvelopes/redenvelopes"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "",
+    "navigationBarTextStyle": "black"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

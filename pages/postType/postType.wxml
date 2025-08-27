@@ -1,0 +1,54 @@
+<!--docsType.wxml-->
+<!-- 引入模板 -->
+<import src="../../template/common-list" />
+<import src="../../template/common-hot" />
+<import src="../../template/common-tab" />
+
+<!-- 引入骨架 -->
+<cover-bulr-bg wx:if="{{skeleton}}"></cover-bulr-bg>
+
+<!-- 自定义状态栏 -->
+<cover-bulr-nav scrollTopHightX="{{scrollTopHightX}}" statusBarHeight="{{statusBarHeight}}" coverSearch="{{coverSearch}}" logo="{{logo}}" icon="{{icon}}" vip="{{vip}}"></cover-bulr-nav>
+
+<!-- /* 背景图片 */ -->
+<view class="cover-bg-view item-hots" wx:if="{{hot == null }}">
+  <view class="mask msak-1"></view>
+  <view class="mask msak-2"></view>
+  <view class="mask msak-3"></view>
+  <view class="materia-bottom"></view>
+</view>
+
+
+<!-- 滚动案例区 -->
+<view style="margin-top: 240rpx;position: relative;">
+  <!-- hot列表 -->
+  <template wx:if="{{hot != null }}" is="tempCommonHot" data="{{hot:hot,vip:vip,hotSet:hotSet,adSwitch:wxSet.adSwitch,nextMargin:hotSet.length !=1 ? '60px':'0px' }}" />
+  <!-- 文案 -->
+  <block wx:else="">
+    <view class="swiper-case-item">
+      <view class="swiper-h">
+        <view class="swiper-title">
+          策顽磨钝
+        </view>
+        <view class="swiper-desrc">
+          向未来张望的时光，或许孤独而漫长，希望努力过后，都是晴朗
+        </view>
+      </view>
+    </view>
+  </block>
+</view>
+
+<!-- 此view包裹sticky吸顶效果 -->
+<view>
+  <!-- 选项卡定位 -->
+  <view class="fengrui-tab" style="position: absolute;top: 60rpx;left: 0;"></view>
+  <!-- 选项卡  -->
+  <template is="tempCommonTab" data="{{statusBarHeight:statusBarHeight,swID:swID,categoriestTab:categoriestTab,active:active,type:type}}" />
+  <!-- 列表 -->
+  <template is="tempCommonList" data="{{tabLists:tabLists,adSwitch:adSwitch,threeDaysLater:threeDaysLater,vip:vip,videoAd:videoAd}}" />
+</view>
+
+<!-- loading加载图 -->
+<block wx:if="{{page > 1}}">
+  <loading-lis listsLoading="{{listsLoading}}"></loading-lis>
+</block>

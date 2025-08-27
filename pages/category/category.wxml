@@ -1,0 +1,101 @@
+<!--pages/category/category.wxml-->
+<!-- 引入骨架 -->
+<cover-bulr-bg wx:if="{{skeleton}}"></cover-bulr-bg>
+
+<!-- 自定义状态栏 -->
+<cover-bulr-nav scrollTopHightX="{{scrollTopHightX}}" statusBarHeight="{{statusBarHeight}}" logo="{{logo}}" icon="{{icon}}"></cover-bulr-nav>
+
+<!-- 头部信息 -->
+<view class="category-top-bg item-hots">
+  <view class="mask msak-1"></view>
+  <view class="mask msak-2"></view>
+  <view class="mask msak-3"></view>
+  <view class="materia-bottom"></view>
+</view>
+
+<!-- 文案 -->
+<view class="category-h">
+  <view class="category-title">
+    {{speech.title}}
+  </view>
+  <view class="category-desrc">
+    {{speech.desrc}}
+  </view>
+</view>
+
+
+<!-- 列表 -->
+<view class="category-lists-flex">
+  <!-- 资源列表 -->
+  <block wx:for="{{categories}}" wx:key="id">
+    <view class="category-lists-item" wx:if="{{item.attributes.type == 'Post'}}" data-id="{{item.id}}" data-type="{{item.attributes.type}}" bindtap="categoryTap">
+      <view class="category-lists-title font-ooverflow-one">{{item.attributes.name}}</view>
+      <view class="category-lists-dsrc font-ooverflow-two">{{item.attributes.desrc}}</view>
+      <view class="category-lists-img">
+        <image class="fengrui-img" mode="aspectFit" src="{{item.attributes.icon}}"></image>
+      </view>
+    </view>
+  </block>
+  <view class="fengrui-hr"></view>
+
+  <!-- 文档列表 -->
+  <block wx:for="{{categories}}" wx:key="id">
+    <view class="category-doc-item" wx:if="{{item.attributes.type == 'Doc'}}" data-id="{{item.id}}" data-type="{{item.attributes.type}}" bindtap="categoryTap">
+      <view class="category-doc-title font-ooverflow-one">{{item.attributes.name}}</view>
+      <view class="category-doc-img">
+        <image class="fengrui-img" mode="aspectFit" src="{{item.attributes.icon}}"></image>
+      </view>
+    </view>
+  </block>
+  <view class="fengrui-hr"></view>
+
+  <!-- 壁纸列表 -->
+  <block wx:for="{{categories}}" wx:key="id">
+    <view class="category-lists-item" wx:if="{{item.attributes.type == 'Image'}}" data-id="{{item.id}}" data-type="{{item.attributes.type}}" bindtap="categoryTap">
+      <view class="category-lists-title font-ooverflow-one">{{item.attributes.name}}</view>
+      <view class="category-lists-dsrc font-ooverflow-two">{{item.attributes.desrc}}</view>
+      <view class="category-lists-img">
+        <image class="fengrui-img" mode="aspectFit" src="{{item.attributes.icon}}"></image>
+      </view>
+    </view>
+  </block>
+
+  <!-- 题目列表 -->
+  <block wx:for="{{categories}}" wx:key="id">
+    <view class="category-doc-item" wx:if="{{item.attributes.type == 'Topic'}}" data-id="{{item.id}}" data-type="{{item.attributes.type}}" bindtap="categoryTap">
+      <view class="category-doc-title font-ooverflow-one">{{item.attributes.name}}</view>
+      <view class="category-doc-img">
+        <image class="fengrui-img" mode="aspectFit" src="{{item.attributes.icon}}"></image>
+      </view>
+    </view>
+  </block>
+  <view class="fengrui-hr"></view>
+
+  <!-- 刷题列表 -->
+  <block wx:for="{{categories}}" wx:key="id">
+    <view class="category-lists-item" wx:if="{{item.attributes.type == 'BrushQuestion'}}" data-id="{{item.id}}" data-type="{{item.attributes.type}}" bindtap="categoryTap">
+      <view class="category-lists-title font-ooverflow-one">{{item.attributes.name}}</view>
+      <view class="category-lists-dsrc font-ooverflow-two">{{item.attributes.desrc}}</view>
+      <view class="category-lists-img">
+        <image class="fengrui-img" mode="aspectFit" src="{{item.attributes.icon}}"></image>
+      </view>
+    </view>
+  </block>
+  <view class="fengrui-hr"></view>
+
+  <!-- 红包封面列表 -->
+  <block wx:for="{{categories}}" wx:key="id">
+    <view class="category-doc-item" wx:if="{{item.attributes.type == 'HonBao'}}" data-id="{{item.id}}" data-type="{{item.attributes.type}}" bindtap="categoryTap">
+      <view class="category-doc-title font-ooverflow-one">{{item.attributes.name}}</view>
+      <view class="category-doc-img">
+        <image class="fengrui-img" mode="aspectFit" src="{{item.attributes.icon}}"></image>
+      </view>
+    </view>
+  </block>
+  <view class="fengrui-hr"></view>
+</view>
+
+<!-- loading加载图 -->
+<block wx:if="{{page > 1}}">
+  <loading-lis listsLoading="{{listsLoading}}"></loading-lis>
+</block>

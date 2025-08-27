@@ -1,0 +1,43 @@
+{
+  "collectionName": "components_vajras_vajras",
+  "info": {
+    "displayName": "vajra",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "default": "VIP"
+    },
+    "icon": {
+      "type": "string",
+      "default": "../../images/Bag.png"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "wx_default",
+        "wx_program",
+        "wx_web",
+        "wx_kefu",
+        "wx_share"
+      ],
+      "default": "wx_default"
+    },
+    "url": {
+      "type": "string",
+      "default": "../my/my"
+    },
+    "appId": {
+      "type": "string"
+    },
+    "isShow": {
+      "type": "boolean",
+      "default": true
+    },
+    "desrc": {
+      "type": "string"
+    }
+  }
+}

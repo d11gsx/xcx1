@@ -1,0 +1,65 @@
+{
+  "kind": "collectionType",
+  "collectionName": "posts",
+  "info": {
+    "singularName": "post",
+    "pluralName": "posts",
+    "displayName": "资源",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "default": "默认标题"
+    },
+    "desrc": {
+      "type": "string"
+    },
+    "ver": {
+      "type": "string"
+    },
+    "cover": {
+      "type": "string"
+    },
+    "status": {
+      "type": "boolean",
+      "default": true
+    },
+    "images": {
+      "type": "text"
+    },
+    "adRead": {
+      "type": "boolean",
+      "default": true
+    },
+    "notice": {
+      "type": "string"
+    },
+    "category": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::category.category",
+      "inversedBy": "posts"
+    },
+    "vers": {
+      "displayName": "ver",
+      "type": "component",
+      "repeatable": true,
+      "component": "vers.ver"
+    },
+    "doc": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::doc.doc",
+      "inversedBy": "posts"
+    },
+    "web": {
+      "type": "string"
+    }
+  }
+}

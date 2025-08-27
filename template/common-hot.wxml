@@ -1,0 +1,42 @@
+<!-- 滚动案例区 -->
+<template name="tempCommonHot">
+  <swiper class="swiper-case" next-margin="{{nextMargin}}" wx:if="{{hot != ''}}">
+    <swiper-item class="swiper-case-item" wx:for="{{hotSet}}" wx:key="index">
+      <view class="swiper-case-list item-hots swiper-v5-bg{{index}}">
+        <View>
+          <view class="swiper-v5-title">
+            {{item.title}} <text style="font-size: 26rpx;margin-left: 10rpx;"> {{item.desrc}}</text>
+          </view>
+          <view class="lsits-tips" style="right: 20rpx;top: 20rpx;">
+            <image class="fengrui-img" src="{{item.icon}}" mode="aspectFit" />
+          </view>
+          <view class="swiper-v5-hot">HOT LIST</view>
+        </View>
+        <!-- 内容列表 -->
+        <scroll-view class="scroll-view_H" scroll-x="true" style="width: 100%;white-space: nowrap;height: 200rpx;">
+          <block wx:for="{{hot[index]}}" wx:for-index="idx" wx:for-item="ity" wx:key="idx">
+            <view style="display: inline-block;width: 440rpx;" bindtap="indexListsTap" data-type="{{item.type}}" data-id="{{ity.id}}">
+              <view class="swiper-v5-list">
+                <image class="swiper-v5-list-img" src="{{ity.attributes.cover}}" mode="aspectFill" />
+                <view style="margin-left: 20rpx;">
+                  <view class="swiper-case-title font-ooverflow-two">{{ity.attributes.title}}</view>
+                  <view class="swiper-tag-view" style="margin-top: 20rpx;">
+                    <view class="swiper-tag-ver" wx:if="{{ity.attributes.ver != null}}">
+                      {{ity.attributes.ver}}
+                    </view>
+                    <view class="swiper-tag-ad" wx:if="{{ity.attributes.adRead && adSwitch && !vip}}">
+                      激励广告
+                    </view>
+                    <view class="swiper-tag-free" wx:else="">
+                      限时免费
+                    </view>
+                  </view>
+                </view>
+              </view>
+            </view>
+          </block>
+        </scroll-view>
+      </view>
+    </swiper-item>
+  </swiper>
+</template>

@@ -1,0 +1,117 @@
+/* pages/doc/doc.wxss */
+/* 背景图片 */
+.cover-bg-view {
+  height: 400rpx;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+/* 文档内容 */
+.doc-ma-title {
+  margin-top: 240rpx;
+  font-size: 60rpx;
+  z-index: 999;
+  position: relative;
+}
+
+.doc-content {
+  margin: 48rpx 36rpx;
+  text-align: justify;
+  font-size: 30rpx;
+}
+
+/* 描述 */
+.describe {
+  padding: 30rpx;
+  border-radius: 20rpx;
+  background-color: rgb(236 242 255);
+  font-size: 26rpx;
+  margin: 60rpx 36rpx 20rpx 36rpx;
+  line-height: 40rpx;
+}
+
+/* 文档列表 */
+.scroll-view {
+  height: 100rpx;
+  white-space: nowrap;
+}
+.scroll-view-ac{
+  color: #1e82ff !important;
+  font-weight: bold;
+  font-size: 40rpx;
+}
+.scroll-view-item{
+  color: #e0e0e0;
+  position: relative;
+}
+
+/* 激励广告 */
+.issue-ad-view {
+  margin-top: 20%;
+  overflow: hidden;
+}
+
+.issue-ad-img {
+  height: 300rpx;
+  width: 300rpx;
+  display: block;
+  margin: auto
+}
+
+.swiper-case-list-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.issue-ad-desrc {
+  color: #ADADAD;
+  font-size: 26rpx;
+  padding: 36rpx 0;
+  text-align: center;
+}
+
+/* 相关附件 */
+.bound-view {
+  position: fixed;
+  display: flex;
+  bottom: 60rpx;
+  justify-content: flex-start;
+  align-items: center;
+  right: 36rpx;
+  width: auto;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 1rem 3rem rgba(31, 45, 61, .23);
+  border-radius: 200rpx;
+  padding: 30rpx;
+}
+
+.bound-title {
+  font-size: 34rpx;
+  flex: 1;
+  font-weight: bold;
+}
+
+.bound-img {
+  margin: 0 18rpx;
+  height: 50rpx;
+  width: 50rpx;
+}
+
+.bound-hd {
+  height: 14rpx;
+  width: 80rpx;
+  border-radius: 100rpx;
+  background-color: rgb(187, 187, 187);
+  margin: 20rpx auto;
+}
+
+.bound-url {
+  background-color: #1e82ff;
+  color: #fff;
+  font-size: 24rpx;
+  padding: 14rpx 20rpx;
+  border-radius: 100rpx;
+}

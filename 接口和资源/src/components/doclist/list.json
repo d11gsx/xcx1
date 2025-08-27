@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_doclist_lists",
+  "info": {
+    "displayName": "list",
+    "icon": "bulletList",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "content": {
+      "type": "richtext"
+    }
+  }
+}

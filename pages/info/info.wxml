@@ -1,0 +1,91 @@
+<!--pages/classify/classify.wxml-->
+<!-- 自定义状态栏 -->
+<cover-bulr-nav scrollTopHightX="{{scrollTopHightX}}" statusBarHeight="{{statusBarHeight}}" logo="{{logo}}" icon="{{icon}}" title=""></cover-bulr-nav>
+
+<!-- 背景图片 -->
+<!-- <view class="info-bg">
+  <image class="fengrui-img" mode="aspectFill" src="../../images/popup_bg_0.png"></image>
+</view> -->
+
+<view class="info-img">
+  <image class="fengrui-img" src="{{info.attributes.cover}}" mode="aspectFill" style="position: inherit;" />
+  <view class="info-bottom"></view>
+</view>
+
+<view class="title">
+  <text wx:if="{{info.attributes.status}}" class="lists-hot">🔥</text> {{info.attributes.title}}
+</view>
+
+<!-- 案例滑动图片 -->
+<view style="margin-top: 60rpx;" wx:if="{{stateImg}}">
+  <swiper next-margin="300rpx" style="height:260rpx">
+    <block wx:for="{{stateImg}}" wx:key="index">
+      <swiper-item>
+        <image bindtap="stateImgTap" data-id='{{index}}' class="fengrui-img state-img" mode="aspectFill" src="{{item}}"></image>
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+
+<!-- 公告 -->
+<view class="notice" wx:if="{{info.attributes.notice != null }}">
+  <div class="notice-fire">
+    <image class="fengrui-img" src="../../images/notice.gif" mode="aspectFit"/>
+  </div>
+  <view class="notice-centent">
+    {{info.attributes.notice}}
+  </view>
+</view>
+
+<!-- 描述 -->
+<view class="describe" wx:else="">
+  {{info.attributes.desrc}}
+</view>
+
+<!-- 发行版本 -->
+<block wx:if="{{isDownload}}">
+  <view class="issue-view" wx:for="{{info.attributes.vers}}" wx:key="id">
+    <view class="issue-title">
+      <view>{{item.ver}}</view>
+      <view class="issue-shrink">
+        <text class="issus-docs" bind:tap="docsTap" data-id="{{info.attributes.doc.data.id}}" wx:if="{{info.attributes.doc.data != null}}">文档</text>
+        <text class="issus-docs issue-web" bind:tap="webTap" wx:if="{{info.attributes.web != null}}">原文</text>
+      </view>
+    </view>
+    <view class="issue-item">
+      <view class="issue-flex">
+        <image class="issue-icon" src="../../images/Pencil.svg" mode="aspectFit" />
+        <view>更新说明</view>
+      </view>
+      <view class="issue-desrc">
+        <mp-html content="{{item.content}}" markdown="true" tag-style="{{tagStyle}}" selectable="force" />
+      </view>
+      <block wx:if="{{item.url != null}}">
+        <view class="issue-flex">
+          <image class="issue-icon" src="../../images/zip.svg" mode="aspectFit" />
+          <view>ZIP包</view>
+        </view>
+        <view class="issue-install-url">
+          <text user-select="true" style="word-break: break-all;">{{code64 == '' ? item.url : code64 }}</text>
+        </view>
+        <view wx:if="{{code64 != ''}}" class="detail-btn" style="margin-top: 0rpx;margin-bottom: 48rpx;position: initial;" bind:tap="copyTap" data-url="{{item.url}}">
+          复制Resource值
+        </view>
+      </block>
+    </view>
+  </view>
+</block>
+<block wx:else="">
+  <view class="issue-ad-view" bindtap="getVideoAd">
+    <view class="issue-ad-desrc">
+      <view>查看作品发行版本以及更新说明</view>需您观看激励视频广告
+    </view>
+    <view class="detail-btn" style="margin-top: 0rpx;margin-bottom: 48rpx;position: initial;">
+      <image class="detail-icon" src="../../images/ad_video.svg" mode="aspectFill" />
+      广告查看
+    </view>
+  </view>
+</block>
+
+<!-- 占位 -->
+<view style="margin-top: 60px;height: 1px;"></view>

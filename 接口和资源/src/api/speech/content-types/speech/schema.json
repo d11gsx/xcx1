@@ -1,0 +1,35 @@
+{
+  "kind": "singleType",
+  "collectionName": "speeches",
+  "info": {
+    "singularName": "speech",
+    "pluralName": "speeches",
+    "displayName": "一言设置",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "apiSwitch": {
+      "type": "boolean",
+      "default": true
+    },
+    "adRead": {
+      "type": "boolean",
+      "default": false
+    },
+    "API": {
+      "type": "enumeration",
+      "enum": [
+        "https://v1.hitokoto.cn/?c=d&c=j"
+      ]
+    },
+    "content": {
+      "type": "component",
+      "repeatable": true,
+      "component": "text-url.text-url"
+    }
+  }
+}

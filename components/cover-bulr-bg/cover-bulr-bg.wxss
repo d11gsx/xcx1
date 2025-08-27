@@ -1,0 +1,48 @@
+/* components/cover-bulr-bg/cover-bulr-bg.wxss */
+.cover_bulr_bg{
+  height: 100%;
+  width: 100%;
+  z-index: 1000009;
+  position: fixed;
+  background-color: rgb(255, 255, 255, 0.75);    
+  top: 0;
+  left: 0;
+}
+/* css加载动画 */
+.custom-loader {
+  width: 50px;
+  height: 50px;
+  display: grid;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.custom-loader::before,
+.custom-loader::after {    
+  content:"";
+  grid-area: 1/1;
+  --c: radial-gradient(farthest-side,#766DF4 92%,#0000);
+  background: 
+    var(--c) 50%  0, 
+    var(--c) 50%  100%, 
+    var(--c) 100% 50%, 
+    var(--c) 0    50%;
+  background-size: 12px 12px;
+  background-repeat: no-repeat;
+  animation: s2 1s infinite;
+}
+.custom-loader::before {
+margin:4px;
+filter:hue-rotate(45deg);
+background-size: 8px 8px;
+animation-timing-function: linear
+}
+
+@keyframes s2{ 
+100%{transform: rotate(.5turn)}
+}
+
+.cover_bar_srcoll {
+  backdrop-filter: blur(20px);
+}

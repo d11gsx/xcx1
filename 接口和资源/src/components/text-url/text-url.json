@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_text_url_text_urls",
+  "info": {
+    "displayName": "text-url",
+    "icon": "apps"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    }
+  }
+}

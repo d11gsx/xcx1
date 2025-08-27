@@ -1,0 +1,37 @@
+/* components/loading-lis/loading-lis.wxss */
+
+/* 加载图标 */
+.loading-icon {
+  height: 80rpx;
+  height: 80rpx;
+  margin: 30rpx auto;
+}
+
+.loading-text {
+  color: #8a8a8a;
+  font-size: 26rpx;
+  text-align: center;
+  padding: 40rpx 0;
+  letter-spacing: 10rpx;
+}
+.fengrui-img {
+  height: 100%;
+  width: 100%;
+}
+
+/* CSS3加载动画 */
+.custom-loader {
+  width: 70rpx;
+  height: 70rpx;
+  margin: auto;
+  border-radius: 50%;
+  background: 
+    radial-gradient(farthest-side,#8210F4 94%,#0000) top/8px 8px no-repeat,
+    conic-gradient(#0000 30%,#8210F4);
+  -webkit-mask: radial-gradient(farthest-side,#0000 calc(100% - 8px),#000 0);
+  animation:s3 1s infinite linear;
+}
+
+@keyframes s3{ 
+  100%{transform: rotate(1turn)}
+}

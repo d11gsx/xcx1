@@ -1,0 +1,46 @@
+{
+  "kind": "collectionType",
+  "collectionName": "walls",
+  "info": {
+    "singularName": "wall",
+    "pluralName": "walls",
+    "displayName": "壁纸",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "adRead": {
+      "type": "boolean",
+      "default": true
+    },
+    "category": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::category.category",
+      "inversedBy": "walls"
+    },
+    "image": {
+      "type": "text"
+    },
+    "cover": {
+      "type": "string"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "mp4",
+        "jpg/png"
+      ],
+      "default": "jpg/png"
+    },
+    "url": {
+      "type": "text"
+    }
+  }
+}

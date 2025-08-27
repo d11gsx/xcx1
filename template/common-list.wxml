@@ -1,0 +1,54 @@
+<!--template/common-list.wxml-->
+<template name="tempCommonList">
+  <block wx:for="{{tabLists}}" wx:key="index" wx:for-item="fritem">
+    <view class="waterfall">
+      <block wx:for="{{fritem}}" wx:key="index">
+        <!-- 壁纸列表 -->
+        <block wx:if="{{item.attributes.category.data.attributes.type == 'Image' || item.attributes.category.data.attributes.type == 'HonBao'}}">
+          <view class="wall-lists-item" bindtap="indexListsTap" data-id="{{item.id}}" data-type="{{item.attributes.category.data.attributes.type}}">
+            <view class="wall-lists-img">
+              <view class="wall-video-icon" wx:if="{{item.attributes.type == 'mp4'}}">
+                <image class="fengrui-img" src="/images/wall-play.svg" mode="aspectFit" />
+              </view>
+              <lazy-img class="fengrui-img" wx:if="{{item.attributes.cover != null}}" src="{{item.attributes.cover}}" imgMode="widthFix" isWall="true" />
+              <lazy-img wx:else="" src="../../images/Images-rafiki.jpg" imgMode="scaleToFill" isWall="true" />
+            </view>
+          </view>
+        </block>
+        <!-- 文档 和 资源，题库 列表 -->
+        <block wx:else="">
+          <view class="lists-item" bindtap="indexListsTap" data-id="{{item.id}}" data-type="{{item.attributes.category.data.attributes.type}}" data-open="{{item.attributes.openWeb}}" data-web="{{item.attributes.web}}">
+            <view class="lsits-tips" wx:if="{{ item.attributes.updatedAt >= threeDaysLater}}">
+              <image class="fengrui-img" src="../../images/updatever.png" mode="aspectFit" />
+            </view>
+            <view class="lists-img">
+              <lazy-img class="fengrui-img" wx:if="{{item.attributes.cover != null}}" src="{{item.attributes.cover}}" imgMode="widthFix" isWall="fasle" />
+              <lazy-img wx:else="" src="../../images/Images-rafiki.jpg" imgMode="widthFix" isWall="fasle" />
+              <view class="swiper-time lists-time">
+                {{item.attributes.updatedAt}}
+              </view>
+            </view>
+            <view class="font-ooverflow-two lists-title">
+              {{item.attributes.title}}
+            </view>
+            <view class="swiper-tag-view">
+              <view class="swiper-tag-ver" wx:if="{{item.attributes.ver != undefined}}">
+                {{item.attributes.ver}}
+              </view>
+              <view class="swiper-tag-ad" wx:if="{{item.attributes.adRead && adSwitch && !vip}}">
+                激励广告
+              </view>
+              <view class="swiper-tag-free" wx:else="">
+                限时免费
+              </view>
+            </view>
+          </view>
+        </block>
+        <block wx:if="{{adSwitch == true  && vip == false && videoAd != null}}">
+          <ad-custom wx:if="{{ (index + 1) % 6 == 0 }}" unit-id="{{videoAd}}" style="margin-bottom: 28rpx;border-radius: 20rpx;break-inside: avoid;  -webkit-column-break-inside: avoid;-moz-column-break-inside: avoid;" bindload="adLoad" binderror="adError" bindclose="adClose"></ad-custom>
+        </block>
+      </block>
+    </view>
+    <view class="lists-page" wx:if="{{tabLists[index].length > 0}}"> ---- 第 {{index + 1}} 页 ----</view>
+  </block>
+</template>

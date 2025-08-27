@@ -1,0 +1,174 @@
+/* pages/classify/classify.wxss */
+/* 顶部图片 */
+.info-bg {
+  height: 680rpx;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.info-img {
+  overflow: hidden;
+  display: block;
+  height: 400rpx;
+  width: 100%;
+  position: relative;
+}
+.info-bottom{
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 30rpx;
+  width: 100%;
+  background-color: rgb(255, 255, 255);
+  border-radius: 50rpx 50rpx 0 0;
+  box-shadow: #dadada 0px -5px 19px;
+}
+.title{
+  font-size: 44rpx;
+}
+.lists-hot{
+  display: inline;
+  font-size: 48rpx;
+}
+/* 描述 */
+.describe {
+  padding: 30rpx;
+  border-radius: 20rpx;
+  background: #F2F2F2;
+  color: #ADADAD;
+  font-size: 26rpx;
+  margin: 40rpx 36rpx;
+  line-height: 40rpx;
+}
+
+/* 状态 */
+.state {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+.state-default {
+  border-radius: 20px;
+  background: #F2F2F2;
+  color: #C4C4C4;
+  font-size: 36rpx;
+  padding: 40rpx 60rpx;
+  margin-left: 28rpx;
+  font-weight: bold;
+}
+
+.state-maintain {
+  background: #DAF2E4 !important;
+  color: #2DA15D !important;
+}
+
+.state-stop {
+  background: #FF9E9E !important;
+  color: #E60E0E !important;
+}
+
+.ma-top {
+  margin-top: 80rpx;
+}
+
+/* 图片预览 */
+.state-img {
+  width: 90%;
+  border-radius: 20rpx;
+  margin-left: 28rpx;
+}
+
+/* 发行版本 */
+.issue {
+  margin: 40rpx 28rpx;
+}
+
+.issue-view {
+  background-color: #2F3644;
+  border-radius: 40rpx;
+  margin: 70rpx 28rpx;
+  overflow: hidden;
+}
+
+.issue-flex {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  padding: 28rpx 28rpx 10rpx 28rpx;
+}
+
+.issue-icon {
+  height: 50rpx;
+  width: 50rpx;
+  margin-right: 28rpx;
+}
+.issue-shrink{
+  flex-shrink: 0;
+}
+
+.issue-title {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #FFFFFF;
+  padding: 36rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.issue-web{
+  margin-left: 20rpx;
+  background-color: #2d8ca1 !important;
+}
+.issus-docs{
+  background-color: #2da19b;
+  border-radius: 100rpx;
+  padding: 8rpx 30rpx;
+  font-size: 28rpx;
+  flex-shrink: 0;
+}
+.issue-desrc {
+  font-size: 28rpx;
+  margin: 0 28rpx;
+  color: #3D3D3D;
+  text-align: justify;
+}
+
+.issue-install-url {
+  background-color: #F2F2F2;
+  color: #ADADAD;
+  padding: 30rpx;
+  font-size: 26rpx;
+  margin: 28rpx;
+  border-radius: 20rpx;
+  text-align: justify;
+}
+
+.issue-item {
+  background-color: #fff;
+  border-radius: 40rpx;
+  margin-bottom: 0rpx;
+  overflow: hidden;
+}
+
+.issue-ad-view {
+  position: absolute;
+  bottom: 30rpx;
+  width: 100%;
+  overflow: hidden;
+}
+
+.issue-ad-desrc {
+  padding:36rpx;
+  text-align: center;
+  font-size: 26rpx;
+  color: #ADADAD;
+}
+
+.swiper-case-list-img{
+  position: absolute;
+  top: 0;
+  left: 0;
+}

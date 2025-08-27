@@ -1,0 +1,45 @@
+<!--template/common-list.wxml-->
+<template name="tempCommonLSpeech">
+  <!-- 一言列表 -->
+  <swiper class="swiper-speench" next-margin="260rpx">
+    <!-- 文案 灵沐接口-->
+    <block wx:for="{{tabLists}}" wx:key="id" wx:if="{{apiSwitch == false}}">
+      <swiper-item class="swiper-speench-item">
+        <view class="swiper-speench-list">
+          <view class="speech-symbol">“</view>
+          <view class="speech-view">
+            <view class="speech-cent" wx:if="{{item.title}}">
+              {{item.title}}
+            </view>
+            <view class="speech-name" wx:if="{{item.url}}">---{{item.url}}</view>
+          </view>
+        </view>
+      </swiper-item>
+    </block>
+    <!-- 文案 第三方接口-->
+    <block wx:if="{{apiSwitch == true}}">
+      <swiper-item class="swiper-speench-item">
+        <view class="swiper-speench-list">
+          <view class="speech-symbol">“</view>
+          <view class="speech-view">
+            <view class="speech-cent" wx:if="{{tabLists.hitokoto}}">
+              {{tabLists.hitokoto}}
+            </view>
+            <view class="speech-cent spench-from" wx:if="{{tabLists.from}}">
+              {{tabLists.from}}
+            </view>
+          </view>
+        </view>
+      </swiper-item>
+    </block>
+    <swiper-item class="swiper-speench-item">
+      <view class="swiper-speench-list" bind:tap="speenchMore">
+        <view class="speech-view">
+          <view class="speech-cent speench-more">
+            访问更多...
+          </view>
+        </view>
+      </view>
+    </swiper-item>
+  </swiper>
+</template>

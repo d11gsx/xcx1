@@ -1,0 +1,42 @@
+<!--pages/about/about.wxml-->
+<!-- 自定义状态栏 -->
+<cover-bulr-nav scrollTopHightX="{{scrollTopHightX}}" statusBarHeight="{{statusBarHeight}}" logo="{{logo}}" icon="{{icon}}"></cover-bulr-nav>
+
+<block>
+  <!-- logo -->
+  <view class="logo">
+    <image class="fengrui-img" mode="aspectFit" src="{{wxSet.logo}}" style="display: inline-block;" />
+  </view>
+
+  <!-- 名称 -->
+  <view class="name-title">
+    {{wxSet.appName}}
+    <view class="name-v">
+      V5.1
+    </view>
+  </view>
+
+  <!-- 描述 -->
+  <view class="desrc">
+    <mp-html content="{{wxSet.about}}" markdown="true" selectable="force" tag-style="{{tagStyle}}" scroll-table="{{scrollTable}}" />
+  </view>
+
+  <!-- foot -->
+  <view class="foot">
+    <view>
+      BY：YinFengrui
+    </view>
+    <view>
+      Copyright@2023-2024 www.frbkw.com
+    </view>
+  </view>
+
+  <view class="waterfall">
+    <block wx:for="{{35}}">
+      <view class="item">{{index}}</view>
+      <view class="item" wx:if="{{ (index + 1) % 6 == 0 }}">
+        <ad-custom  unit-id="adunit-8afac1a59ddf887b" style="margin-bottom: 28rpx;border-radius: 20rpx;" bindload="adLoad" binderror="adError" bindclose="adClose"></ad-custom>
+      </view>
+    </block>
+  </view>
+</block>

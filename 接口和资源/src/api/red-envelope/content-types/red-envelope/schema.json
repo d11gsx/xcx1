@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "red_envelopes",
+  "info": {
+    "singularName": "red-envelope",
+    "pluralName": "red-envelopes",
+    "displayName": "红包封面",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "adRead": {
+      "type": "boolean",
+      "default": true
+    },
+    "category": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::category.category",
+      "inversedBy": "honbao"
+    },
+    "url": {
+      "type": "text"
+    },
+    "cover": {
+      "type": "string"
+    }
+  }
+}

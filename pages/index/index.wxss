@@ -1,0 +1,242 @@
+/**index.wxss**/
+/* 顶部信息 */
+.index-top {
+  width: 100%;
+  position: relative;
+}
+
+.index-top-height {
+  height: 640rpx;
+}
+
+.fengrui-ceshi {
+  position: absolute;
+  bottom: -3rpx;
+  left: 0;
+  height: 30%;
+  width: 100%;
+}
+
+.search-type {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 90%;
+  height: 80rpx;
+  overflow: hidden;
+  font-size: 28rpx;
+  margin: 0 30rpx 30rpx 30rpx;
+}
+
+.search-text {
+  padding: 20rpx 48rpx 30rpx 48rpx;
+  color: rgb(0, 0, 0);
+  font-size: 28rpx;
+}
+
+.search-text-peo {
+  background-image: linear-gradient(to right, #1e3c72 0%, #1e3c72 1%, #2a5298 100%);
+  color: #fff;
+  margin-right: 14rpx;
+  border-radius: 100rpx;
+  padding: 4rpx 18rpx;
+}
+
+.index-type-item {
+  width: 100%;
+  flex-shrink: 1;
+  text-align: center;
+  color: #fff;
+}
+
+.index-type-item-active {
+  background-color: #fff;
+  border-radius: 30rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  color: #2F3644;
+}
+
+/* 搜索 */
+.search-view {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -50rpx;
+  padding: 30rpx 0;
+  width: 94%;
+  border-radius: 40rpx;
+  z-index: 9;
+  background-color: rgb(245 245 245 / 47%);
+  backdrop-filter: blur(20px);
+  overflow: hidden;
+}
+
+.search-btn {
+  position: absolute;
+  right: 4%;
+  height: 100rpx;
+  background-image: linear-gradient(to right, #00c6fb 0%, #005bea 100%);
+  bottom: 30rpx;
+  width: 22%;
+  font-size: 28rpx;
+  border-radius: 40rpx;
+  color: #fff;
+  line-height: 100rpx;
+  text-align: center;
+}
+
+.search-icon {
+  position: absolute;
+  bottom: 56rpx;
+  left: 20rpx;
+  width: 50rpx;
+  height: 50rpx;
+  padding: 0 20rpx 0 30rpx;
+}
+
+.search-input {
+  height: 100rpx;
+  width: 50%;
+  margin-left: 4%;
+  padding: 0 60rpx 0 90rpx;
+  z-index: 99999;
+}
+
+.search-inpt-view {
+  background-color: #fff;
+  border-radius: 40rpx;
+  margin: 0 30rpx;
+  height: 100rpx;
+}
+
+/* 金刚区 瓷片区 */
+.group-porcelain {
+  display: flex;
+  justify-content: space-between;
+  margin:36rpx 36rpx 0 36rpx;
+}
+
+.group-porcelain-left {
+  width: 50% !important;
+  flex-shrink: 0;
+  height: 300rpx;
+  border-radius: 30rpx;
+  overflow: hidden;
+  position: relative;
+  padding: unset !important;
+  margin: unset !important;
+}
+
+.group-porcelain-left-title {
+  position: absolute;
+  left: 30rpx;
+  top: 30rpx;
+  color: #fff;
+  font-size: 46rpx;
+  font-weight: bold;
+  text-align: start;
+}
+
+.group-porcelain-left-desrc {
+  font-size: 20rpx;
+  margin-top: 0rpx;
+}
+
+.group-porcelain-left-icon {
+  height: 120rpx;
+  width: 120rpx;
+  position: absolute;
+  bottom: 30rpx;
+  right: 30rpx;
+  border-radius: 20rpx;
+  overflow: hidden;
+}
+
+.group-porcelain-right {
+  width: 46%;
+  flex-shrink: 0;
+}
+
+.group-porcelain-right-btn {
+  height: 140rpx;
+  margin-bottom: 30rpx;
+  border-radius: 20rpx;
+  padding: unset !important;
+  margin: unset !important;
+  width: 100% !important;
+  color: #fff;
+  position: relative;
+  text-align: start;
+}
+.group-porcelain-right-title{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 30rpx;
+}
+.group-porcelain-right-icon{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 30rpx;
+  height: 80rpx;
+  width: 80rpx;
+}
+
+.group-porcelain-right-btn-t {
+  background: linear-gradient(100.73deg, rgba(137, 92, 250, 1) 0%, rgba(92, 190, 250, 1) 100%);
+}
+
+.group-porcelain-right-btn-b {
+  background: linear-gradient(137.29deg, rgba(255, 138, 28, 1) 0%, rgba(255, 231, 158, 1) 100%);
+}
+
+.group-icon-view {
+  display: flex;
+  flex-wrap: wrap;
+  width: 94%;
+  margin-left: 3%;
+  position: relative;
+}
+
+.group-icon-item {
+  width: 20% !important;
+  padding: 0 !important;
+  margin: 20rpx 0 0 0 !important;
+  background-color: unset !important;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.group-icon-icon {
+  height: 80rpx;
+  width: 80rpx;
+  margin: auto;
+}
+
+.group-icon-text {
+  font-size: 24rpx;
+  text-align: center;
+  margin-top: 20rpx;
+}
+
+/* 标题 */
+.ds-felx {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* 选项卡滚动样式 必须 */
+.scroll-view {
+  height: 100rpx;
+  white-space: nowrap;
+}
+
+.scroll-view-icon {
+  height: 54rpx;
+  width: 54rpx;
+  margin-right: 8rpx;
+  vertical-align: middle;
+}

@@ -1,0 +1,43 @@
+{
+  "kind": "collectionType",
+  "collectionName": "subjects",
+  "info": {
+    "singularName": "subject",
+    "pluralName": "subjects",
+    "displayName": "考公",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "material": {
+      "type": "component",
+      "repeatable": true,
+      "component": "doclist.list"
+    },
+    "topic": {
+      "displayName": "topic",
+      "type": "component",
+      "repeatable": true,
+      "component": "topiclist.topic"
+    },
+    "cover": {
+      "type": "string"
+    },
+    "category": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::category.category",
+      "inversedBy": "subject"
+    },
+    "adRead": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

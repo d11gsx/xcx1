@@ -1,0 +1,10 @@
+<!--components/loading-lis/loading-lis.wxml-->
+
+<block>
+  <!-- css3加载动画 -->
+  <view wx:if="{{listsLoading}}" class="custom-loader"></view>
+
+  <view wx:else="" class="loading-text">
+    到(,,•́ 底 •̀,,)咯
+  </view>
+</block>

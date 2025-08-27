@@ -1,0 +1,124 @@
+/* pages/lists/lists.wxss */
+
+/* 背景图片 */
+.cover-bg-view {
+  height: 600rpx;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+/* 顶部图片 */
+.top-img {
+  position: absolute;
+  top: 240rpx;
+  left: 0;
+  text-align: center;
+  width: 100%;
+}
+
+.top-title {
+  font-size: 60rpx;
+  margin-bottom: 20rpx;
+  font-weight: bold;
+}
+
+.top-value {
+  color: #FF9C9C;
+  font-style: oblique;
+}
+
+/* 选项卡滚动样式 必须 */
+.scroll-view {
+  height: 100rpx;
+  white-space: nowrap;
+}
+
+.scroll-view-icon {
+  height: 54rpx;
+  width: 54rpx;
+  margin-right: 8rpx;
+  vertical-align: middle;
+}
+
+/* 定制选项卡部分样式 */
+.muen-view,
+.scroll-view-icon {
+  display: none;
+}
+
+.scroll-view-item {
+  width: 22%;
+  position: relative;
+}
+
+/* 壁纸 */
+.wall-lists-flex {
+  display: flex;
+  padding: 28rpx;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.wall-lists-item {
+  border-radius: 20rpx;
+  background-color: #f9f9f9;
+  width: 100%;
+  flex-shrink: 0;
+  margin-bottom: 28rpx;
+  position: relative;
+}
+
+.lwall-ists-title {
+  margin: 20rpx;
+}
+
+
+.wall-lists-hot {
+  display: inline;
+  font-size: 28rpx;
+
+}
+
+/* 搜索无内容 */
+.issue-ad-view {
+  margin-top: 10%;
+  overflow: hidden;
+}
+
+.issue-ad-img {
+  height: 300rpx;
+  width: 300rpx;
+  display: block;
+  margin: auto
+}
+
+.swiper-case-list-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.issue-ad-desrc {
+  color: #ADADAD;
+  font-size: 26rpx;
+  padding: 36rpx;
+  text-align: center;
+}
+
+/* 选项卡徽章动画 */
+.loader {
+  width: 14rpx;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: #4b75ff;
+  box-shadow: 0 0 0 0 #4b75ff;
+  animation: l1 1s infinite;
+  position: absolute;
+  right: 14%;
+  top: 45%;
+}
+@keyframes l1 {
+    100% {box-shadow: 0 0 0 16rpx #0000}
+}

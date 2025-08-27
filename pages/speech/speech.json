@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "cover-bulr-bg":"../../components/cover-bulr-bg/cover-bulr-bg",
+    "cover-bulr-nav":"../../components/cover-bulr-nav/cover-bulr-nav",
+    "loading-lis":"../../components/loading-lis/loading-lis"
+  },
+  "navigationStyle":"custom"
+}

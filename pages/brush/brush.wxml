@@ -1,0 +1,69 @@
+<!--pages/topic/topic.wxml-->
+
+<!-- 自定义状态栏 -->
+<cover-bulr-nav scrollTopHightX="{{scrollTopHightX}}" statusBarHeight="{{statusBarHeight}}" logo="{{logo}}" icon="{{icon}}"></cover-bulr-nav>
+
+<!-- 头部信息 -->
+<view class="category-top-bg" style="height: {{materiaHeight[0].height + 200}}px;">
+  <image class="fengrui-img" mode="aspectFill" src="../../images/bg1.png"></image>
+  <!-- 进度 -->
+  <view class="progress">
+    {{atciv + 1 }}/{{info.attributes.brush.length}}
+  </view>
+  <!-- 公告 -->
+  <view class="notice materia-notice" wx:if="{{info.attributes.notice != null }}">
+    <text class="notice-h">说明：</text>{{info.attributes.notice}}
+  </view>
+  <view class="materia-bottom"></view>
+</view>
+
+<block wx:for="{{info.attributes.brush}}" wx:key="index">
+  <view wx:if="{{atciv == index}}">
+    <!-- 题目标题 -->
+    <view class="brush-title">
+      <text class="brush-lenght">{{item.answer.length > 1 ? '多选':'单选'}}</text>
+      {{item.title}}
+    </view>
+
+    <!-- 题目选项 -->
+    <View class="lits-box">
+      <checkbox-group bindchange="checkboxChange">
+        <!-- checked判断是否为选中 -->
+        <label class="{{ls.checked == true ? 'lits-active':'lits'}}" wx:for="{{item.options}}" wx:for-index="idx" wx:for-item="ls" wx:key="idx">
+          <view>
+            <checkbox value="{{idx}}" checked="{{ls.checked}}" />
+          </view>
+          <view class="">{{ls.title}}</view>
+        </label>
+      </checkbox-group>
+    </View>
+
+    <!-- 答案分析 -->
+    <block wx:if="{{analysis}}">
+      <block wx:if="{{isTopic}}">
+        <view class="brush-answer">
+          <view>正确答案：{{item.answer}}</view>
+          <view style="margin-top: 20rpx;">题目分析：{{item.desrc}}</view>
+        </view>
+      </block>
+      <block wx:else="">
+        <view class="issue-ad-view" bindtap="getVideoAd">
+          <view class="issue-ad-desrc">
+            <view>查看题目解析有助于记忆提高</view>观看激励视频广告可获取本次所有解析
+          </view>
+          <view class="detail-btn" style="margin-top: 0rpx;margin-bottom: 48rpx;position: initial;">
+            <image class="detail-icon" src="../../images/ad_video.svg" mode="aspectFill" />
+            广告查看
+          </view>
+        </view>
+      </block>
+    </block>
+
+    <!-- 底部按钮 -->
+    <view class="brush-footer">
+      <view wx:if="{{answerBL}}" class="{{ answerBL == '答案正确'? 'brush-answer-derc brush-answer-derc-t':'brush-answer-derc brush-answer-derc-f'}}">{{answerBL}}</view>
+      <view wx:if="{{atciv != 0}}" class="brush-foot-bot ma-ri-20" bind:tap="brushOn">上一题</view>
+      <view class="brush-foot-bot" bind:tap="brushIn">下一题</view>
+    </view>
+  </view>
+</block>

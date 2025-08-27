@@ -1,0 +1,37 @@
+<!-- /* pages/redenvelopes/redenvelopes.wxml */ -->
+<!-- 自定义状态栏 -->
+<cover-bulr-nav scrollTopHightX="{{scrollTopHightX}}" statusBarHeight="{{statusBarHeight}}" logo="{{logo}}" icon="{{icon}}" vip="{{vip}}"></cover-bulr-nav>
+
+<!-- 背景轮播 -->
+<swiper class="index-bg" current="{{swipreIndex}}">
+    <swiper-item>
+      <image src="{{wall.attributes.cover}}" class="fengrui-img" mode="aspectFill" />
+    </swiper-item>
+</swiper>
+
+<!-- 高斯模糊图层 -->
+<view class="index-blur"></view>
+
+<!-- 滚动案例区 -->
+<swiper class="swiper-wall" indicator-dots="{{indicatorDots}}" current="{{swipreIndex}}" indicator-active-color="#007AFF" easing-function="easeInOutCubic" bindchange="bindChange" next-margin="0px" previous-margin="0px">
+  <swiper-item class="swiper-wall-item">
+    <view class="swiper-wall-list-img">
+      <!-- 图片 -->
+      <image src="{{wall.attributes.cover}}" class="fengrui-img-wall" mode="widthFix" />
+    </view>
+    </swiper-item>
+</swiper>
+
+<!-- 下载区域 -->
+<view class="wallcover-fixed">
+  <view class="wallcover-title">{{wall.attributes.title}}</view>
+  <view class="wallcover-flex">
+    <button class="detail-btn wallcover-btn" open-type="share">
+      分享好友
+    </button>
+    <button class="detail-btn" bindtap="sevePhto">
+      <image wx:if="{{ isShow == true }}" class="detail-icon" src="../../images/ad_video.svg" mode="aspectFill" />
+      获取封面
+    </button>
+  </view>
+</view>

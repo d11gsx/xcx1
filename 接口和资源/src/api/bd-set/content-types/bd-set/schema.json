@@ -1,0 +1,98 @@
+{
+  "kind": "singleType",
+  "collectionName": "bd_sets",
+  "info": {
+    "singularName": "bd-set",
+    "pluralName": "bd-sets",
+    "displayName": "百度设置",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "appName": {
+      "type": "string",
+      "default": "枫瑞博客网-灵沐作品小程序"
+    },
+    "indexBg": {
+      "type": "text",
+      "default": "../../images/index-bg.jpg"
+    },
+    "logo": {
+      "type": "string",
+      "default": "https://cdn.frbkw.com/wp-center/uploads/2020/10/logo201020.png"
+    },
+    "host": {
+      "type": "string",
+      "default": "&filters[id][$eq]=1&filters[id][$eq]=2"
+    },
+    "shareTitle": {
+      "type": "string"
+    },
+    "shareImg": {
+      "type": "string"
+    },
+    "about": {
+      "type": "richtext"
+    },
+    "jiliAd": {
+      "type": "string"
+    },
+    "videoAd": {
+      "type": "string"
+    },
+    "adSwitch": {
+      "type": "boolean",
+      "default": true
+    },
+    "notice": {
+      "type": "string"
+    },
+    "vajra": {
+      "displayName": "vajra",
+      "type": "component",
+      "repeatable": true,
+      "component": "vajras.vajra"
+    },
+    "docHost": {
+      "type": "string",
+      "default": "&filters[id][$eq]=1&filters[id][$eq]=2"
+    },
+    "indexType": {
+      "type": "enumeration",
+      "enum": [
+        "Post",
+        "Doc",
+        "Image",
+        "Topic",
+        "BrushQuestion",
+        "Speech"
+      ],
+      "default": "Post"
+    },
+    "popNotice": {
+      "type": "string"
+    },
+    "copyUrl": {
+      "type": "boolean",
+      "default": false
+    },
+    "popNoticeUrl": {
+      "type": "string"
+    },
+    "adCache": {
+      "type": "boolean",
+      "default": false
+    },
+    "attendviImg": {
+      "type": "component",
+      "repeatable": true,
+      "component": "text-url.text-url"
+    },
+    "brushHost": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,57 @@
+<!--pages/lists/lists.wxml-->
+<!-- 引入模板 -->
+<import src="../../template/common-list" />
+<import src="../../template/common-tab" />
+
+<!-- 引入骨架 -->
+<cover-bulr-bg wx:if="{{skeleton}}"></cover-bulr-bg>
+
+<!-- 自定义状态栏 -->
+<cover-bulr-nav scrollTopHightX="{{scrollTopHightX}}" statusBarHeight="{{statusBarHeight}}" coverSearch="{{coverSearch}}" logo="{{logo}}" icon="{{icon}}"></cover-bulr-nav>
+
+<!-- 选项卡定位 -->
+<view class="fengrui-tab" style="position: absolute;top: 60rpx;left: 0;"></view>
+
+<!-- /* 背景图片 */ -->
+<view class="cover-bg-view item-hots">
+  <!-- <image src="../../images/bg1.png" class="fengrui-img" mode="aspectFill"></image> -->
+  <view class="mask msak-1"></view>
+  <view class="mask msak-2"></view>
+  <view class="mask msak-3"></view>
+  <view class="materia-bottom"></view>
+  <!-- 顶部图片 -->
+  <view class="top-img">
+    <block wx:if="{{search != 'undefined'}}">
+      <view class="top-title">你在寻找<text class="top-value"> {{search}}</text></view>
+      <view>当形势不利自己的时候 我们都想要公平</view>
+    </block>
+    <block wx:else="">
+      <view class="top-title">{{speech.title}}</view>
+      <view>{{speech.desrc}}</view>
+    </block>
+  </view>
+</view>
+
+<!-- 此view包裹sticky吸顶效果 -->
+<view style="margin-top: 620rpx;">
+  <!-- 列表 -->
+  <template is="tempCommonList" data="{{tabLists:list,adSwitch:adSwitch,threeDaysLater:threeDaysLater,vip:vip,videoAd:videoAd}}" />
+</view>
+
+<!-- loading加载图 -->
+<block wx:if="{{page > 1}}">
+  <loading-lis listsLoading="{{listsLoading}}"></loading-lis>
+</block>
+
+<!-- 搜索无内容 -->
+<block wx:if="{{showPrivacy}}">
+  <view class="issue-ad-view" bindtap="getVideoAd">
+    <view class="issue-ad-img">
+      <image class="fengrui-img" src="../../images/video-ad.svg" mode="aspectFill" />
+    </view>
+    <view class="issue-ad-desrc">
+      <view>阿勒...这个星球没你要的内容</view>
+      <view class="top-value">切换到隔壁看看</view>
+    </view>
+  </view>
+</block>

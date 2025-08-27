@@ -1,0 +1,39 @@
+/* pages/follow/follow.wxss */
+/* 背景图片 */
+.cover-bg-view{
+  height: 600rpx;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.follow-pos {
+  width: 100%;
+  margin-top: 60rpx;
+}
+
+.follow-img {
+  height: auto;
+  width: 66%;
+  border-radius: 40rpx;
+  border: 1px solid rgb(204, 204, 204);
+  padding: 20rpx;
+  margin: 40rpx auto 0rpx auto;
+
+}
+
+.follow-title {
+  margin-top: 50rpx;
+  font-size: 50rpx;
+  font-weight: bold;
+  text-align: center;
+}
+
+.follow-descr {
+  text-align: center;
+  font-size: 26rpx;
+  color: #ADADAD;
+
+}

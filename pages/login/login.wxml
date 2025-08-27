@@ -1,0 +1,49 @@
+<!--pages/login/login.wxml-->
+<!-- 自定义状态栏 -->
+<cover-bulr-nav scrollTopHightX="{{scrollTopHightX}}" statusBarHeight="{{statusBarHeight}}" logo="{{logo}}" icon="{{icon}}"></cover-bulr-nav>
+
+<view class="bg">
+  <!-- 页面背景 -->
+  <image class="bg-imgs" src="../../images/landing.png" mode="aspectFill"></image>
+
+  <!-- 注册容器 -->
+  <view class="longin-view" wx:if="{{isRegister}}">
+    <view class="longin-slogan">注册一把钥匙！随时等待你的回家</view>
+    <form bindsubmit="submitRegister">
+      <view class="btn-view">
+        <image class="btn-icon" src="../../images/light_user.svg" mode="" />
+        <input class="username-btn" type="text" placeholder="请输入用户名" name="username" confirm-type="next" />
+      </view>
+      <view class="btn-view">
+        <image class="btn-icon" src="../../images/watchlists.svg" mode="" />
+        <input class="username-btn" type="text" placeholder="请输入邮箱" name="email" confirm-type="next" />
+      </view>
+      <view class="btn-view">
+        <image class="btn-icon" src="../../images/password.svg" mode="" />
+        <input class="username-btn" type="password" password placeholder="请输入密码" name="password" confirm-type="next" />
+      </view>
+      <button class="submit-btn" form-type="submit">注册</button>
+      <view class="submit-register" bind:tap="registerTap">已有账户,返回登录</view>
+    </form>
+  </view>
+
+  <!-- 登录容器 -->
+  <view class="longin-view" wx:else>
+    <view class="longin-logo">
+      <image class="fengrui-img" src="../../images/login-imgs.png" mode="aspectFit"></image>
+    </view>
+    <view class="longin-slogan">Hi，欢迎回来</view>
+    <form bindsubmit="submitLocal">
+      <view class="btn-view">
+        <image class="btn-icon" src="../../images/light_user.svg" mode="" />
+        <input class="username-btn" type="text" name="identifier" placeholder="请输入用户名" confirm-type="next" />
+      </view>
+      <view class="btn-view">
+        <image class="btn-icon" src="../../images/password.svg" mode="" />
+        <input class="username-btn" type="password" name="password" password placeholder="请输入密码" confirm-type="next" />
+      </view>
+      <button class="submit-btn" form-type="submit">登录</button>
+    </form>
+    <view class="submit-register" bind:tap="registerTap">注册新用户</view>
+  </view>
+</view>

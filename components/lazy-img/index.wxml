@@ -1,0 +1,6 @@
+<block wx:if="{{isImage}}">
+  <image class="fengrui-img"  src="{{show ? src : '../../images/Images-rafiki.jpg'}}" mode="{{imgMode}}" />
+</block>
+<block wx:else="">
+  <video class="wall-video" src="{{show ? src : '../../images/Images-rafiki.jpg'}}" show-fullscreen-btn="{{show_fullscreen}}" show-center-play-btn="{{show_play}}" show-play-btn="{{show_play}}" controls="{{controls}}" object-fit="cover" loop="true" muted="true" />
+</block>

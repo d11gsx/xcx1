@@ -1,0 +1,69 @@
+<!--pages/wallcover/wallcover.wxml-->
+<!-- 自定义状态栏 -->
+<cover-bulr-nav scrollTopHightX="{{scrollTopHightX}}" statusBarHeight="{{statusBarHeight}}" logo="{{logo}}" icon="{{icon}}" vip="{{vip}}"></cover-bulr-nav>
+
+<!-- 背景轮播 -->
+<swiper class="index-bg" current="{{swipreIndex}}">
+  <block wx:for="{{image}}" wx:key="index">
+    <swiper-item>
+      <image wx:if="{{wall.attributes.type != 'mp4' || wall.attributes.type == null}}" src="{{item}}" class="fengrui-img" mode="aspectFill" />
+      <video wx:else="" class="wall-video" id="video{{index + 1}}" how-fullscreen-btn="{{show_fullscreen}}" controls="{{controls}}" object-fit="cover" src="{{item}}" />
+    </swiper-item>
+  </block>
+</swiper>
+
+<!-- 高斯模糊图层 -->
+<view class="index-blur"></view>
+
+<!-- 滚动案例区 -->
+<swiper class="swiper-wall" indicator-dots="{{indicatorDots}}" current="{{swipreIndex}}" indicator-active-color="#007AFF" easing-function="easeInOutCubic" bindchange="bindChange" next-margin="{{image.length > 1 ? '30px':'0px'}}" previous-margin="{{image.length > 1 ? '30px':'0px'}}">
+  <block wx:for="{{image}}" wx:key="index">
+    <swiper-item class="swiper-wall-item">
+      <view class="swiper-wall-list-img">
+        <!-- 图片 -->
+        <image wx:if="{{wall.attributes.type != 'mp4' || wall.attributes.type == null}}" src="{{item}}" class="fengrui-img-wall" mode="widthFix" />
+        <!-- 视频 -->
+        <video wx:else="" style="height: {{heightVideo[swipreIndex]}};" class="wall-video-cover" how-fullscreen-btn="{{show_fullscreen}}" show-play-btn="{{show_play}}" controls="{{controls}}" object-fit="cover" autoplay="false" loop="true" muted="{{muted}}" src="{{item}}" bindloadedmetadata="videoInfo"  id="video{{index}}" show-center-play-btn="false" />
+        <!-- 加载遮照 -->
+        <block wx:if="{{wall.attributes.type == 'mp4'}}">
+          <view wx:if="{{videoLogin}}" class="fengrui-img-wall" style=" backdrop-filter: blur(20px);background-color:#ffffff;">
+            <view class="custom-loader"></view>
+          </view>
+        </block>
+      </view>
+    </swiper-item>
+  </block>
+</swiper>
+
+<!-- 下载区域 -->
+<view class="wallcover-fixed">
+  <view class="wallcover-flex">
+    <button class="detail-btn wallcover-btn" open-type="share" wx:if="{{wall.attributes.url == null}}">
+      分享好友
+    </button>
+    <button class="detail-btn wallcover-btn-rul" wx:else="" bind:tap="privacyUrl">
+      <image wx:if="{{ isShow == true }}" class="detail-icon" src="../../images/ad_video.svg" mode="aspectFill" />
+      打包保存
+    </button>
+    <button class="detail-btn" bindtap="sevePhto">
+      <image wx:if="{{ isShow == true }}" class="detail-icon" src="../../images/ad_video.svg" mode="aspectFill" />
+      {{wall.attributes.type == 'mp4' ? '保存视频':'保存壁纸'}}
+    </button>
+  </view>
+</view>
+
+<!-- 视频音乐按钮 -->
+<view bind:tap="videoMusic" wx:if="{{wall.attributes.type == 'mp4'}}" class="{{ muted == true ? 'video-music video-music-hui':'video-music video-music-rouad'}}">
+  <image class="fengrui-img" src="../../images/video-music.png" mode="aspectFill"/>
+</view>
+
+<!-- 弹窗 -->
+<view class="privacy-bg" wx:if="{{showPrivacy}}" catchtouchmove="true" bind:tap="offprivacy">
+  <view class="privacy-view" animation="{{animationData}}" catch:tap="privacyUrl">
+      <view class="privacy-title">打包下载</view>
+      <view class="privacy-des">
+        <text user-select="true" style="word-break: break-all;">{{code64 == '' ? wall.attributes.url : code64 }}</text>
+      </view>
+    <button class="privac-btn" wx:if="{{wxSet.copyUrl == true}}" bind:tap="copyTap">复制Resource值</button>
+  </view>
+</view>

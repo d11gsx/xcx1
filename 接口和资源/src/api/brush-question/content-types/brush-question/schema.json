@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "brush_questions",
+  "info": {
+    "singularName": "brush-question",
+    "pluralName": "brush-questions",
+    "displayName": "刷题",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "brush": {
+      "type": "component",
+      "repeatable": true,
+      "component": "brush-question.brush-question"
+    },
+    "notice": {
+      "type": "string"
+    },
+    "cover": {
+      "type": "string"
+    },
+    "adRead": {
+      "type": "boolean",
+      "default": false
+    },
+    "category": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::category.category",
+      "inversedBy": "brush_questions"
+    },
+    "title": {
+      "type": "string"
+    }
+  }
+}

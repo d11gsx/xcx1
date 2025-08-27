@@ -1,0 +1,58 @@
+{
+  "kind": "collectionType",
+  "collectionName": "docs",
+  "info": {
+    "singularName": "doc",
+    "pluralName": "docs",
+    "displayName": "文档",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "desrc": {
+      "type": "string"
+    },
+    "cover": {
+      "type": "string"
+    },
+    "adRead": {
+      "type": "boolean",
+      "default": true,
+      "required": false
+    },
+    "notice": {
+      "type": "string"
+    },
+    "category": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::category.category",
+      "inversedBy": "docs"
+    },
+    "list": {
+      "displayName": "list",
+      "type": "component",
+      "repeatable": true,
+      "component": "doclist.list"
+    },
+    "web": {
+      "type": "string"
+    },
+    "posts": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::post.post",
+      "mappedBy": "doc"
+    },
+    "openWeb": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

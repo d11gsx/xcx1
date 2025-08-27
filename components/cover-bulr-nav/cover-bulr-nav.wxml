@@ -1,0 +1,23 @@
+<!--components/cover-bulr-nav/cover-bulr-nav.wxml-->
+<view class="cover-fixed" >
+  <view class="{{ scrollTopHightX > 50 ? 'cover_bar cover_bar_srcoll':'cover_bar'}}" style="padding-top: {{statusBarHeight}}px;overflow: hidden;">
+    <view class="cover-fixed-title" wx:if="{{icon}}">
+      <view class="cover-tax" bindtap="isLogin">
+        <image class="fengrui-img" mode="aspectFit" src="../../images/user.png" style="{{vip == false ? 'filter: grayscale(100%)':'filter: grayscale(0%)'}}"></image>
+      </view>
+      <view class="cover-user">
+        <image class="fengrui-img" mode="aspectFit" src="{{logo}}"></image>
+      </view>
+    </view>
+    <view wx:else="" class="cover-fixed-title">
+      <view class="cover-back" bindtap="tarBlack">
+        <image class="fengrui-img" mode="aspectFit" src="../../images/back-icon.svg"></image>
+      </view>
+      <view wx:if="{{coverSearch}}" class="cover-search" bindtap="coverSearchTap">
+        <image class="fengrui-img" mode="aspectFit" src="../../images/search-icon.svg"></image>
+      </view>
+      <!-- <view class="cover-title">{{title}}</view> -->
+    </view>
+    <!-- <input name="place" bindconfirm="search" class="cover-input" type="text" confirm-type="search" placeholder="搜索内容" placeholder-style="font-size:24rpx;" /> -->
+  </view>
+</view>

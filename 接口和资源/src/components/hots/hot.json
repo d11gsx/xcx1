@@ -1,0 +1,38 @@
+{
+  "collectionName": "components_hots_hots",
+  "info": {
+    "displayName": "hot",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "isShow": {
+      "type": "boolean",
+      "default": true
+    },
+    "hosID": {
+      "type": "string"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "Post",
+        "Doc",
+        "Image",
+        "Topic",
+        "BrushQuestion",
+        "Speech",
+        "HonBao"
+      ]
+    },
+    "desrc": {
+      "type": "string"
+    },
+    "icon": {
+      "type": "string"
+    }
+  }
+}

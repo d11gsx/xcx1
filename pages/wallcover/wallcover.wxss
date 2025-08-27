@@ -1,0 +1,274 @@
+/* pages/wallcover/wallcover.wxss */
+
+/* .案例区 */
+.swiper-h {
+  margin-top: 50rpx;
+  padding: 36rpx;
+}
+
+.swiper-title {
+  font-size: 60rpx;
+  font-weight: bold;
+}
+
+.swiper-desrc {
+  margin: 40rpx auto;
+  font-size: 26rpx;
+}
+
+.swiper-wall {
+  height: 70%;
+  width: 100%;
+  margin-top: 26%;
+}
+
+
+.swiper-wall-list-img {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  margin: auto;
+  position: relative;
+  border-radius: 60rpx;
+}
+
+.swiper-wall-item {
+  height: 100%;
+  width: 90% !important;
+  padding: 0 5%;
+}
+
+.wallcover-fixed {
+  position: fixed;
+  bottom: 40rpx;
+  width: 100%;
+  overflow: hidden;
+}
+
+.wallcover-title {
+  margin: 36rpx;
+  text-align: center;
+  font-weight: bold;
+}
+
+.wallcover-title-desrc {
+  margin: 0 36rpx;
+  color: #ADADAD;
+  font-size: 26rpx;
+}
+
+.wallcover-flex {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 40rpx;
+}
+
+.fengrui-img-wall {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 60rpx;
+}
+
+.wallcover-btn {
+  background-image: linear-gradient(to right, #ed6ea0 0%, #ec8c69 100%) !important;
+  color: #ffffff !important;
+}
+
+.wallcover-btn-rul {
+  background-image: linear-gradient(-20deg, #fc6076 0%, #ff9a44 100%);
+  color: #ffffff !important;
+}
+
+.wall-video {
+  height: 100%;
+  width: 100%;
+}
+
+.wall-video-cover {
+  border-radius: 60rpx;
+  overflow: hidden;
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.detail-btn {
+  width: 44% !important;
+  margin: 0rpx auto 30rpx auto;
+}
+
+/* 背景滚动 */
+.index-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 800rpx;
+  width: 100%;
+}
+
+.index-blur {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  backdrop-filter: blur(18px);
+  background-image: linear-gradient(to bottom,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(150, 150, 150, 0.1) 20%,
+      rgba(255, 255, 255, 0.2) 40%,
+      rgba(255, 255, 255, 0.6) 60%,
+      rgb(255, 255, 255) 100%);
+}
+
+/* css加载动画 */
+.custom-loader {
+  width: 50px;
+  height: 50px;
+  display: grid;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.custom-loader::before,
+.custom-loader::after {
+  content: "";
+  grid-area: 1/1;
+  --c: radial-gradient(farthest-side, #766DF4 92%, #0000);
+  background:
+    var(--c) 50% 0,
+    var(--c) 50% 100%,
+    var(--c) 100% 50%,
+    var(--c) 0 50%;
+  background-size: 12px 12px;
+  background-repeat: no-repeat;
+  animation: s2 1s infinite;
+}
+
+.custom-loader::before {
+  margin: 4px;
+  filter: hue-rotate(45deg);
+  background-size: 8px 8px;
+  animation-timing-function: linear
+}
+
+@keyframes s2 {
+  100% {
+    transform: rotate(.5turn)
+  }
+}
+
+/* 弹窗 */
+.privacy-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, .5);
+  z-index: 9999999;
+}
+
+.privacy-view {
+  position: absolute;
+  animation: mymove 0.6s infinite;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  width: 85%;
+  padding: 40rpx;
+  background-color: #ffffff;
+  border-radius: 40rpx;
+}
+
+.privacy-title {
+  margin: 40rpx auto;
+  text-align: center;
+  font-size: 36rpx;
+  font-weight: bold;
+}
+
+.privacy-des {
+  background-color: #F2F2F2;
+  color: #ADADAD;
+  padding: 30rpx;
+  font-size: 26rpx;
+  margin: 28rpx;
+  border-radius: 20rpx;
+  text-align: justify;
+}
+
+.privacy-link {
+  color: #07c160;
+  line-height: 40rpx;
+}
+
+.privac-btn {
+  background-color: #007AFF;
+  color: #ffffff;
+  width: 80% !important;
+  border-radius: 100rpx;
+  margin-top: 80rpx;
+}
+
+.privac-no {
+  text-align: center;
+  margin-top: 30rpx;
+  color: #666;
+  font-size: 26rpx;
+}
+
+@keyframes mymove {
+  from {
+    bottom: -20%
+  }
+
+  to {
+    bottom: 5%
+  }
+}
+
+.video-music {
+  position: fixed;
+  right: 30rpx;
+  bottom: 200rpx;
+  height: 70rpx;
+  width: 70rpx;
+  box-shadow: red 0rpx 2rpx 10rpx;
+  border-radius: 200px;
+}
+
+.video-music-hui {
+  filter: grayscale(100%)
+}
+
+.video-music-rouad {
+  animation: rotation 1s linear infinite;
+  transform-origin: center center;
+  /* 设置旋转中心点为元素中心点 */
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+page {
+  width: 100%;
+  height: 100%;
+  overflow-y: hidden;
+}

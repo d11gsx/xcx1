@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_vers_vers",
+  "info": {
+    "displayName": "ver",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "ver": {
+      "type": "string"
+    },
+    "content": {
+      "type": "richtext"
+    },
+    "url": {
+      "type": "text"
+    }
+  }
+}

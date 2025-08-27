@@ -1,0 +1,145 @@
+/* pages/topic/topic.wxss */
+/* 头部信息 */
+.category-top-bg {
+  height: 700rpx;
+  width: 100%;
+  background-color: #FAFAFA;
+  overflow: hidden;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+/* 材料 */
+.materia-swiper {
+  height: 400rpx;
+  position: absolute;
+  top: 220rpx;
+  left: 0;
+  z-index: 9;
+  width: 100%;
+}
+
+.materia-item {
+  width: 90%;
+  margin-left: 5%;
+  height: 340rpx;
+  overflow: hidden;
+}
+
+.materia-i-title {
+  font-size: 40rpx;
+  font-weight: bold;
+}
+
+.materia-i-tag {
+  font-size: 28rpx;
+  padding: 4rpx 15rpx;
+  background: #4b75ff;
+  color: #ffffff;
+  border-radius: 10rpx;
+}
+
+.materia-i-coenten {
+  font-size: 28rpx;
+  margin-top: 30rpx;
+  overflow: hidden;
+  text-align: justify;
+}
+
+.materia-bottom {
+  height: 80rpx;
+  background-color: rgb(255, 255, 255);
+  border-radius: 100rpx;
+  position: absolute;
+  left: 0;
+  bottom: -20rpx;
+  width: 100%;
+  box-shadow: #f3f3f3 0px -5px 19px;
+}
+
+/* 题目 */
+.topic-title {
+  margin: 16rpx 36rpx 36rpx 36rpx;
+  text-align: justify;
+  font-weight: bold;
+  background: #FAFAFA;
+  border-radius: 20rpx;
+  padding: 0 36rpx;
+}
+
+.scroll-view {
+  height: 100rpx;
+  white-space: nowrap;
+}
+
+/* 答案 */
+.answer-item {
+  /* background-color: #f3f8ff; */
+  box-shadow: rgb(228 228 228 / 34%) 1px 2px 15rpx;
+  border-radius: 20rpx;
+  padding: 36rpx;
+  display: inline-table;
+  margin: 0 1%;
+}
+
+.answer-title {
+  font-size: 40rpx;
+  font-weight: bold;
+
+}
+
+.answer-swiper {
+  height: 100%;
+}
+
+.answer-swiper-item {
+  width: 96% !important;
+}
+/* 全屏材料 */
+.cover_bulr_bg{
+  height: 100%;
+  width: 100%;
+  z-index: 1000009;
+  position: fixed;
+  background-color: rgb(255, 255, 255, 0.75);    
+  top: 0;
+  left: 0;
+}
+.cover_bar_srcoll {
+  backdrop-filter: blur(20px);
+}
+.custom-material{
+  margin: 240rpx 36rpx 36rpx;
+}
+.custom-off{
+  background-color: #4b75ff;
+  color: #fff;
+  font-size: 40rpx;
+  font-weight: bold;
+  border-radius: 200rpx;
+  height: 80rpx;
+  width: 80rpx;
+  text-align: center;
+  line-height: 80rpx;
+  margin: 40rpx auto;
+}
+
+.issue-ad-view {
+  position: absolute;
+  bottom: 30rpx;
+  width: 100%;
+  overflow: hidden;
+}
+.issue-ad-desrc {
+  padding:36rpx;
+  text-align: center;
+  font-size: 26rpx;
+  color: #ADADAD;
+}
+
+.swiper-case-list-img{
+  position: absolute;
+  top: 0;
+  left: 0;
+}

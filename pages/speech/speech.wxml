@@ -1,0 +1,52 @@
+<!--pages/speech/speech.wxml-->
+<!-- 引入骨架 -->
+<cover-bulr-bg wx:if="{{skeleton}}"></cover-bulr-bg>
+
+<!-- 自定义状态栏 -->
+<cover-bulr-nav scrollTopHightX="{{scrollTopHightX}}" statusBarHeight="{{statusBarHeight}}" logo="{{logo}}" icon="{{icon}}"></cover-bulr-nav>
+
+<!-- 头部信息 -->
+<view class="speech-top">
+  <view class="speech-symbol">“</view>
+
+  <!-- 文案 -->
+  <view class="speech-view" wx:if="{{apiSwitch == false}}">
+    <view class="speech-cent" wx:if="{{speech[idx].title}}">
+      <text user-select="true">{{speech[idx].title}}</text>
+    </view>
+    <view class="speech-name" wx:if="{{speech[idx].url}}">---{{speech[idx].url}}</view>
+  </view>
+
+  <view class="speech-view" wx:else="">
+    <view class="speech-cent" wx:if="{{speech.hitokoto}}">
+      {{speech.hitokoto}}
+    </view>
+    <view class="speech-cent spench-from" wx:if="{{speech.from}}">
+      {{speech.from}}
+    </view>
+  </view>
+
+  <!-- 时间 -->
+  <view class="speech-time">
+    <text>{{formattedDate}}</text>
+    <text class="ma-le-40">{{dayOfWeek}}</text>
+  </view>
+
+  <!-- 次数 -->
+  <view class="speech-ad">
+    <text class="ma-le-40">免费次数 {{free}}</text>
+  </view>
+</view>
+
+<!-- 按钮 -->
+<view class="wallcover-fixed">
+  <view class="wallcover-flex">
+    <button class="detail-btn wallcover-btn" bind:tap="copySpeech">
+      复制一言
+    </button>
+    <button class="detail-btn" bindtap="daInx">
+      <image wx:if="{{free <= 0 }}" class="detail-icon" src="../../images/ad_video.svg" mode="aspectFill" />
+      下一条
+    </button>
+  </view>
+</view>

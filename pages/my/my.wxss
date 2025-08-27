@@ -1,0 +1,140 @@
+/* pages/my/my.wxss */
+/* 背景图片 */
+.cover-bg-view {
+  height: 600rpx;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+/* 头像 */
+.self-user-updata {
+  width: 50rpx;
+  height: 50rpx;
+  position: absolute;
+  right: 48rpx;
+}
+
+.self-user-info-describe {
+  color: #807C7C;
+  font-size: 20rpx;
+  margin-top: 18rpx;
+}
+
+.self-user-vip {
+  background-color: rgb(128, 211, 183);
+  color: #FFFFFF;
+  border-radius: 100rpx;
+  padding: 6rpx 20rpx;
+}
+
+.self-user-uid {
+  background-color: rgb(238, 191, 147);
+  margin-left: 20rpx;
+}
+
+.self-user-info-name {
+  font-size: 50rpx;
+  flex-grow: 1;
+  font-weight: bold;
+}
+
+.self-user-info {
+  margin: 0rpx 50rpx;
+}
+
+.self-user-img {
+  height: 150rpx;
+  width: 150rpx;
+  border-radius: 100rpx;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.self-user-img-vip {
+  position: absolute;
+  width: 50rpx;
+  height: 50rpx;
+  bottom: 0;
+  right: 0rpx;
+}
+
+.self-w {
+  display: flex;
+  justify-content: flex-start;
+  padding: 48rpx;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  margin-top: 200rpx;
+}
+
+.sel-over-w {
+  overflow: hidden;
+  background-color: #FFFFFF;
+  margin: 0rpx 28rpx;
+  border-radius: 16rpx;
+}
+
+/* 用户组 */
+.user-ground {
+  background-color: rgb(236 242 255);
+  border-radius: 20rpx;
+  padding: 20rpx 36rpx;
+  margin: 36rpx;
+  position: relative;
+}
+
+.user-ground-font {
+  font-size: 28rpx;
+  color: #333333;
+  margin: 20rpx 0;
+}
+
+.user-ground-content {
+  font-weight: bold;
+  margin-left: 20rpx;
+}
+
+.user-ground-btn {
+  position: absolute;
+  right: 36rpx;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: black;
+  color: #FFFFFF;
+  padding: 10rpx 30rpx;
+  border-radius: 100rpx;
+}
+
+/* 金刚区 */
+.group-icon-view {
+  display: flex;
+  flex-wrap: wrap;
+  width: 94%;
+  margin-left: 3%;
+  margin-top: 20rpx;
+  position: relative;
+}
+
+.group-icon-item {
+  width: 25% !important;
+  padding: 0 !important;
+  margin: 40rpx 0 !important;
+  background-color: unset !important;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.group-icon-icon {
+  height: 80rpx;
+  width: 80rpx;
+  margin: auto;
+}
+
+.group-icon-text {
+  font-size: 24rpx;
+  text-align: center;
+  margin-top: 20rpx;
+}

@@ -1,0 +1,14 @@
+<template name="tempCommonTab">
+  <view class="scroll-view-sticky" style="top: {{42+statusBarHeight}}px;">
+    <scroll-view class="scroll-view" scroll-y enhanced scroll-x enable-passive="true" show-scrollbar="false" scroll-with-animation="true" scroll-into-view="{{swID}}">
+      <view wx:for="{{categoriestTab}}" data-swipe="{{'sw' + index}}" data-indx="{{index}}" wx:key="index" class="{{ index == active ? 'scroll-view-item scroll-view-bg':'scroll-view-item'}}" bindtap="tabTap" id="{{'sw' + index}}" data-aid="{{item.id}}" data-type="{{item.attributes.type}}" wx:if="{{item.attributes.type == type}}">
+        <image src="{{item.attributes.icon}}" class="scroll-view-icon"></image>
+        {{item.attributes.name}}
+        <view class="loader"></view>
+      </view>
+    </scroll-view>
+    <view class="muen-view" bindtap="muenTap">
+      <image src="../../images/muen.svg" class="muen-icon" mode="aspectFill" />
+    </view>
+  </view>
+</template>

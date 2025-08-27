@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "mp-html": "../../components/mp-html/index",
+    "cover-bulr-nav":"../../components/cover-bulr-nav/cover-bulr-nav"
+  },
+  "navigationStyle":"custom"
+}

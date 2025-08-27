@@ -1,0 +1,78 @@
+<!--index.wxml-->
+<!-- 引入模板 -->
+<import src="../../template/common-list" />
+<import src="../../template/common-hot" />
+<import src="../../template/common-tab" />
+<import src="../../template/common-group" />
+<import src="../../template/common-speech" />
+
+<!-- 引入骨架 -->
+<cover-bulr-bg wx:if="{{skeleton}}"></cover-bulr-bg>
+
+<!-- 自定义状态栏 -->
+<cover-bulr-nav scrollTopHightX="{{scrollTopHightX}}" statusBarHeight="{{statusBarHeight}}" logo="{{logo}}" icon="{{icon}}" vip="{{vip}}"></cover-bulr-nav>
+
+<!-- 顶部背景图片-->
+<view class="index-top index-top-height">
+  <swiper class="index-top-height" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+    <swiper-item wx:for="{{indexBg}}" wx:key="index">
+      <image class="fengrui-img" mode="aspectFill" src="{{item}}"></image>
+    </swiper-item>
+  </swiper>
+
+  <view class="search-view">
+    <view class="search-text"><text class="search-text-peo">人间</text>我和你不过寄居而已...</view>
+    <view class="search-inpt-view">
+      <view class="search-icon">
+        <image class="fengrui-img" src="../../images/search.png" mode="aspectFill" />
+      </view>
+      <input name="place" bindconfirm="search" class="search-input" type="text" confirm-type="search" placeholder="搜索一下！" placeholder-style="" bindinput="searchValue" value="{{searchValue}}" />
+      <view class="search-btn" catchtap="searchBlur">搜索</view>
+    </view>
+  </view>
+
+  <view class="fengrui-ceshi">
+    <image src="../../images/index-swipe-bg.png" class="fengrui-img"></image>
+  </view>
+</view>
+
+<!-- 占位符 -->
+<view style="height: 52rpx;"></view>
+
+<!-- 金刚区 瓷片区 -->
+<template is="tempCommonGroup" data="{{porcelain:porcelain,vajra:vajra}}" />
+
+<!-- 选项卡定位 -->
+<view class="fengrui-tab"></view>
+
+<!-- 公告 -->
+<view class="notice" wx:if="{{wxSet.notice != null }}">
+  <div class="notice-fire">
+    <image class="fengrui-img" src="../../images/notice.gif" mode="aspectFit"/>
+  </div>
+  <view class="notice-centent">
+    {{wxSet.notice}}
+  </view>
+</view>
+
+<!-- 滚动案例区 -->
+<template wx:if="{{hot != ''}}" is="tempCommonHot" data="{{vip:vip,hot:hot,adSwitch:wxSet.adSwitch,nextMargin:'60rpx',hotSet:newHotArray}}" />
+<!-- 此view包裹sticky吸顶效果 -->
+<view>
+  <!-- 选项卡  -->
+  <template is="tempCommonTab" data="{{statusBarHeight:statusBarHeight,swID:swID,categoriestTab:categoriestTab,active:active,type:indexType}}" />
+
+  <!-- 列表 -->
+  <block wx:if="{{wxSet.indexType == 'Speech'}}">
+    <template is="tempCommonLSpeech" data="{{tabLists:tabLists,apiSwitch:apiSwitch}}" />
+  </block>
+
+  <block wx:else="">
+    <template is="tempCommonList" data="{{tabLists:tabLists,adSwitch:adSwitch,threeDaysLater:threeDaysLater,vip:vip,videoAd:videoAd}}" />
+  </block>
+</view>
+
+<!-- loading加载图 -->
+<block wx:if="{{page > 1}}">
+  <loading-lis listsLoading="{{listsLoading}}"></loading-lis>
+</block>

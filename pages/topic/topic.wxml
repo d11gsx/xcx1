@@ -1,0 +1,84 @@
+<!--pages/topic/topic.wxml-->
+
+<!-- 自定义状态栏 -->
+<cover-bulr-nav scrollTopHightX="{{scrollTopHightX}}" statusBarHeight="{{statusBarHeight}}" logo="{{logo}}" icon="{{icon}}"></cover-bulr-nav>
+
+<!-- 头部信息 -->
+<view class="category-top-bg">
+  <image class="fengrui-img" mode="aspectFill" src="../../images/bg1.png"></image>
+  <swiper wx:if="{{info.attributes.material != null}}" class="materia-swiper" indicator-dots="{{materialDots}}" indicator-color="#D9D9D9" indicator-active-color="#5B92FD">
+    <block wx:for="{{info.attributes.material}}" wx:key="index">
+      <swiper-item>
+        <view class="materia-item">
+          <view class="materia-i-title">{{item.title}}
+            <text wx:if="{{materiaHeight[index].height > 120}}" class="materia-i-tag" bind:tap="materiaTap" data-idx="{{index}}">展开内容</text>
+          </view>
+          <view class="materia-i-coenten">
+            <mp-html content="{{item.content}}" markdown="true" selectable="force" tag-style="{{tagStyle}}" />
+          </view>
+        </view>
+      </swiper-item>
+      <!-- 选项卡定位 -->
+      <view class="fengrui-tab"></view>
+    </block>
+  </swiper>
+  <view class="materia-bottom"></view>
+</view>
+
+<!-- 题目按钮-->
+<view class="scroll-view-sticky" style="top: {{42+statusBarHeight}}px;">
+  <scroll-view class="scroll-view" enhanced scroll-x enable-passive="true" show-scrollbar="false" scroll-with-animation="true" scroll-into-view="{{swID}}">
+    <view wx:for="{{info.attributes.topic}}" data-swipe="{{'sw' + index}}" data-indx="{{index}}" wx:key="index" class="{{ index == active ? 'scroll-view-item scroll-view-bg':'scroll-view-item'}}" bindtap="tabTap" id="{{'sw' + index}}" data-aid="{{item.id}}">
+      {{item.title}}
+    </view>
+  </scroll-view>
+</view>
+
+<!-- 题目标题 -->
+<view class="topic-title">
+  <mp-html content="{{info.attributes.topic[active].content}}" markdown="true" tag-style="{{tagStyle}}" selectable="force" />
+</view>
+
+<!-- 答案 -->
+<block wx:if="{{isTopic}}">
+  <swiper class="answer-swiper" next-margin="{{info.attributes.topic[active].answer.length > 1 ? '10px':'0px'}}" previous-margin="20px">
+    <block wx:for="{{info.attributes.topic[active].answer}}" wx:key="index">
+      <swiper-item class="answer-swiper-item">
+        <view class="answer-item item-hots">
+          <view class="mask msak-1 "></view>
+          <view wx:if="{{ (index + 1) % 2 == 0 }}" class="mask msak-2"></view>
+          <view wx:if="{{ (index + 1) % 3 == 0 }}" class="mask msak-3"></view>
+          <view class="answer-title">
+            {{item.title}}
+          </view>
+          <view class="answer-content">
+            <mp-html content="{{item.content}}" markdown="true" selectable="force" tag-style="{{tagStyle}}" />
+          </view>
+        </view>
+      </swiper-item>
+    </block>
+  </swiper>
+</block>
+<block wx:else="">
+  <view class="issue-ad-view" bindtap="getVideoAd">
+    <view class="issue-ad-desrc">
+      <view>查看题库答案详解</view>需您观看激励视频广告
+    </view>
+    <view class="detail-btn" style="margin-top: 0rpx;margin-bottom: 48rpx;position: initial;">
+      <image class="detail-icon" src="../../images/ad_video.svg" mode="aspectFill" />
+      广告查看
+    </view>
+  </view>
+</block>
+
+<!-- 全屏材料 -->
+<view class="cover_bar_srcoll cover_bulr_bg" catchtouchmove="true" wx:if="{{materiaCover}}">
+  <view class="custom-material">
+    <view class="materia-i-title">{{info.attributes.material[materiaInx].title}} </view>
+    <scroll-view scroll-y style="height:{{windowHeight - 250}}px;">
+      <mp-html content="{{info.attributes.material[materiaInx].content}}" markdown="true" tag-style="{{tagStyle}}" />
+      <view style="height: 100rpx;"></view>
+    </scroll-view>
+    <view class="custom-off" bind:tap="customOff">X</view>
+  </view>
+</view>

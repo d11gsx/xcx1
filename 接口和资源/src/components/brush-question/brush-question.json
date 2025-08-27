@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_brush_question_brush_questions",
+  "info": {
+    "displayName": "brushQuestion",
+    "icon": "bulletList",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "desrc": {
+      "type": "string"
+    },
+    "answer": {
+      "type": "string"
+    },
+    "options": {
+      "type": "component",
+      "repeatable": true,
+      "component": "text-url.text-url"
+    }
+  }
+}

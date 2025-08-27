@@ -1,0 +1,77 @@
+/* components/cover-bulr-nav/cover-bulr-nav.wxss */
+
+/* .自定义状态栏 */
+.cover-fixed {
+  position: fixed;
+  z-index: 9999999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+}
+
+.cover_bar {
+  height: 86rpx;
+  width: 100%;
+  display: flex;
+  padding-left: 28rpx;
+  align-items: center;
+}
+.cover-fixed-bg{
+  position: absolute;top: 0;left: 0;width: 100%;
+}
+.cover-user {
+  height: 70rpx;
+  width: 150rpx;
+  overflow: hidden;
+}
+.cover-back{
+  height: 70rpx;
+  width: 70rpx;
+}
+.cover-search{
+  height: 70rpx;
+  width: 140rpx;
+  margin-left: 20rpx;
+}
+.cover-tax{
+  height: 50rpx;
+  width: 50rpx;
+  margin-right: 28rpx;
+}
+
+.cover-input {
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 100rpx;
+  padding: 8rpx 20rpx 8rpx 40rpx;
+  margin-left: 20rpx;
+  width: 220rpx;
+  border: 1px rgb(105, 105, 105) solid;
+}
+
+.fengrui-img {
+  height: 100%;
+  width: 100%;
+}
+
+.cover_bar_srcoll {
+  /* backdrop-filter: blur(16px); */
+  background-color: #ffffff;
+  /* border-bottom: 1px solid rgb(0 0 141 / 12%); */
+}
+.cover-fixed-title{
+  width: 70%;
+  display: flex;
+  align-items: center;
+  z-index: 1;
+}
+.cover-title{
+  font-size: 42rpx;
+  margin-left: 28rpx;
+  font-weight: bold;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}

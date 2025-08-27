@@ -1,0 +1,74 @@
+{
+  "kind": "collectionType",
+  "collectionName": "categories",
+  "info": {
+    "singularName": "category",
+    "pluralName": "categories",
+    "displayName": "分类",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "description": "标题N1"
+    },
+    "desrc": {
+      "type": "string"
+    },
+    "icon": {
+      "type": "string"
+    },
+    "posts": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::post.post",
+      "mappedBy": "category"
+    },
+    "docs": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::doc.doc",
+      "mappedBy": "category"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "Post",
+        "Doc",
+        "Image",
+        "Topic",
+        "BrushQuestion",
+        "HonBao"
+      ],
+      "default": "Post"
+    },
+    "walls": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::wall.wall",
+      "mappedBy": "category"
+    },
+    "subject": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::subject.subject",
+      "mappedBy": "category"
+    },
+    "brush_questions": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::brush-question.brush-question",
+      "mappedBy": "category"
+    },
+    "honbao": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::red-envelope.red-envelope",
+      "mappedBy": "category"
+    }
+  }
+}

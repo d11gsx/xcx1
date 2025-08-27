@@ -1,0 +1,89 @@
+<template name="tempCommonGroup">
+  <!-- 瓷片区 -->
+  <view class="group-porcelain" wx:if="{{porcelain != '' }}">
+    <block wx:if="{{porcelain[0].isShow != false}}">
+      <button class="group-porcelain-left" wx:if="{{ porcelain[0].type != 'wx_kefu' &&  porcelain[0].type != 'wx_share' }}" data-type="{{porcelain[0].type}}" data-appid="{{porcelain[0].appId}}" data-url="{{porcelain[0].url}}" bindtap="vajraTap">
+        <image class="fengrui-img" src="../../images/vajra-bg.jpg" mode="aspectFill" />
+        <view class="group-porcelain-left-title">{{porcelain[0].title}}
+          <view class="group-porcelain-left-desrc"> {{porcelain[0].desrc}}</view>
+        </view>
+      </button>
+
+      <button class="group-porcelain-left" open-type="contact" wx:if="{{ item.type == 'wx_kefu'}}">
+        <image class="fengrui-img" src="../../images/vajra-bg.jpg" mode="aspectFill" />
+        <view class="group-porcelain-left-title">{{porcelain[0].title}}
+          <view class="group-porcelain-left-desrc"> {{porcelain[0].desrc}}</view>
+        </view>
+      </button>
+
+      <button class="group-porcelain-left" open-type="share" wx:if="{{ item.type == 'wx_share'}}">
+        <image class="fengrui-img" src="../../images/vajra-bg.jpg" mode="aspectFill" />
+        <view class="group-porcelain-left-title">{{porcelain[0].title}}
+          <view class="group-porcelain-left-desrc"> {{porcelain[0].desrc}}</view>
+        </view>
+      </button>
+    </block>
+
+    <view class="group-porcelain-right">
+      <block wx:for="{{porcelain}}" wx:key="index" wx:if="{{index == 1 || index == 2}}">
+        <block wx:if="{{item.isShow != false}}">
+          <button class="{{index == 1 ? 'group-porcelain-right-btn group-porcelain-right-btn-t':'group-porcelain-right-btn group-porcelain-right-btn-b'}}" wx:if="{{ item.type != 'wx_kefu' &&  item.type != 'wx_share' }}" data-type="{{item.type}}" data-appid="{{item.appId}}" data-url="{{item.url}}" bindtap="vajraTap">
+            <view class="group-porcelain-right-title">{{item.title}}
+              <view class="group-porcelain-left-desrc">{{item.desrc}}</view>
+            </view>
+            <image class="group-porcelain-right-icon" src="{{item.icon}}" mode="" />
+          </button>
+
+          <button class="{{index == 1 ? 'group-porcelain-right-btn group-porcelain-right-btn-t':'group-porcelain-right-btn group-porcelain-right-btn-b'}}" open-type="contact" wx:if="{{ item.type == 'wx_kefu'}}">
+            <view class="group-porcelain-right-title">{{item.title}}
+              <view class="group-porcelain-left-desrc">{{item.desrc}}</view>
+            </view>
+            <image class="group-porcelain-right-icon" src="{{item.icon}}" mode="" />
+          </button>
+
+          <button class="{{index == 1 ? 'group-porcelain-right-btn group-porcelain-right-btn-t':'group-porcelain-right-btn group-porcelain-right-btn-b'}}" open-type="share" wx:if="{{ item.type == 'wx_share'}}">
+            <view class="group-porcelain-right-title">{{item.title}}
+              <view class="group-porcelain-left-desrc">{{item.desrc}}</view>
+            </view>
+            <image class="group-porcelain-right-icon" src="{{item.icon}}" mode="" />
+          </button>
+          <view style="height: 20rpx;" wx:if="{{index == 1}}"></view>
+        </block>
+      </block>
+    </view>
+  </view>
+
+  <!-- 金刚区 -->
+  <view class="group-icon-view" style="{{ porcelain != '' ? '':'margin-top:50rpx;margin-bottom:30rpx' }}">
+    <block wx:for="{{vajra}}" wx:key="id">
+      <block wx:if="{{item.isShow != false}}">
+        <button class="group-icon-item" wx:if="{{ item.type != 'wx_kefu' &&  item.type != 'wx_share' }}" data-type="{{item.type}}" data-appid="{{item.appId}}" data-url="{{item.url}}" bindtap="vajraTap">
+          <view class="group-icon-icon">
+            <image class="fengrui-img" src="{{item.icon}}" mode="aspectFit" />
+          </view>
+          <view class="group-icon-text">
+            {{item.title}}
+          </view>
+        </button>
+
+        <button class="group-icon-item" open-type="contact" wx:if="{{ item.type == 'wx_kefu'}}">
+          <view class="group-icon-icon">
+            <image class="fengrui-img" src="{{item.icon}}" mode="aspectFit" />
+          </view>
+          <view class="group-icon-text">
+            {{item.title}}
+          </view>
+        </button>
+
+        <button class="group-icon-item" open-type="share" wx:if="{{ item.type == 'wx_share'}}">
+          <view class="group-icon-icon">
+            <image class="fengrui-img" src="{{item.icon}}" mode="aspectFit" />
+          </view>
+          <view class="group-icon-text">
+            {{item.title}}
+          </view>
+        </button>
+      </block>
+    </block>
+  </view>
+</template>

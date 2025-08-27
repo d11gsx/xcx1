@@ -1,0 +1,154 @@
+/* pages/topic/topic.wxss */
+/* 头部信息 */
+.category-top-bg {
+  height: 340rpx;
+  width: 100%;
+  background-color: #FAFAFA;
+  overflow: hidden;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+/* 材料 */
+.progress {
+  position: absolute;
+  top: 200rpx;
+  left: 0rpx;
+  color: #fff;
+  background-color: #000000;
+  border-radius: 10rpx;
+  padding: 10rpx 20rpx;
+  margin: 0 36rpx;
+}
+
+.materia-bottom {
+  height: 80rpx;
+  background-color: rgb(255, 255, 255);
+  border-radius: 100rpx;
+  position: absolute;
+  left: 0;
+  bottom: -20rpx;
+  width: 100%;
+  box-shadow: #f3f3f3 0px -5px 19px;
+}
+
+.materia-notice {
+  position: absolute;
+  top: 260rpx;
+  left: 0rpx;
+  margin: 28rpx !important;
+}
+
+/* 题目 */
+.brush-title {
+  margin:0 36rpx;
+  text-align: justify;
+}
+
+.brush-lenght {
+  background-color: #4b75ff;
+  color: #fff;
+  border-radius: 10rpx;
+  padding: 4rpx 12rpx;
+  font-size: 24rpx;
+}
+
+
+.brush-answer {
+  border-radius: 20rpx;
+  color: #fff;
+  background-color: #000000;
+  margin: 40rpx 28rpx;
+  font-size: 30rpx;
+  padding:30rpx;
+
+}
+
+.brush-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 140rpx;
+  background-color: #ffffff;
+}
+.brush-answer-derc{
+  position: absolute;
+  left: 28rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  border-radius: 10rpx;
+  border-radius: 40rpx;
+  margin-right:28rpx;
+  padding: 0rpx 50rpx;
+}
+.brush-answer-derc-t{
+  background-color: #d0ffe7;
+  color: #24d37c;
+}
+.brush-answer-derc-f{
+  background-color: #ffd0d0;
+  color: #d32424;
+}
+
+.brush-foot-bot {
+  padding: 0rpx 50rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  border-radius: 10rpx;
+  background-color: #4b75ff;
+  color: #fff;
+  border-radius: 40rpx;
+  margin-right:28rpx;
+}
+.ma-ri-20{
+  margin-right: 20rpx;
+}
+
+/* 复选框checkbox */
+.lits{
+  display: flex;
+  background-color: #f3f3f3;
+  padding: 30rpx 50rpx;
+  border-radius: 20rpx;
+  margin:30rpx auto;
+}
+
+.lits-box{
+  margin: 50rpx 28rpx;
+}
+
+.lits-active{
+  margin:30rpx auto;
+  background: linear-gradient(to right, #8f41e9, #578aef);
+  display: flex;
+  margin: 30rpx 0;
+  color: #ffffff;
+  padding: 30rpx 50rpx;
+  border-radius: 20rpx;
+}
+
+/* 隐藏修改默认样式 */
+checkbox{
+  display: none;
+}
+
+/* 广告 */
+.issue-ad-view {
+  width: 100%;
+  overflow: hidden;
+}
+
+.issue-ad-desrc {
+  padding:36rpx;
+  text-align: center;
+  font-size: 26rpx;
+  color: #ADADAD;
+}
+

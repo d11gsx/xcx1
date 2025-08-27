@@ -1,0 +1,123 @@
+/* pages/speech/speech.wxss */
+/* 头部信息 */
+.speech-top {
+  margin-top: 30%;
+  height: 70%;
+  width: 90%;
+  margin-left: 5%;
+  background-color: #ffffff;
+  border-radius: 20rpx;
+  position: relative;
+  box-shadow: #dadada 0px 5px 19px;
+  overflow: hidden;
+}
+
+.speech-view {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 88%;
+  transform: translate(-50%, -50%);
+  transition: all 1s;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.speech-symbol {
+  font-size: 400rpx;
+  color: #F1F1F1;
+}
+
+.speech-title {
+  font-size: 80rpx;
+  font-weight: bold;
+  text-align: center;
+}
+
+.speech-cent {
+  margin-top: 60rpx;
+  line-height: 60rpx;
+  text-align: justify;
+}
+
+.speech-name {
+  position: absolute;
+  right: 0;
+  bottom: -40rpx;
+  color: #ADADAD;
+  font-size: 26rpx;
+}
+
+.speech-time {
+  position: absolute;
+  bottom: 60rpx;
+  left: 60rpx;
+  font-size: 26rpx;
+  color: #ADADAD;
+}
+
+.speech-ad {
+  position: absolute;
+  bottom: 60rpx;
+  right: 60rpx;
+  font-size: 26rpx;
+  color: #ADADAD;
+}
+.spench-from {
+  color: #d0d0d0;
+  text-align: right;
+  font-size: 28rpx;
+}
+
+
+/* 按钮 */
+
+.wallcover-fixed {
+  position: fixed;
+  bottom: 40rpx;
+  width: 100%;
+  overflow: hidden;
+}
+
+.wallcover-title {
+  margin: 36rpx;
+  text-align: center;
+  font-weight: bold;
+}
+
+.wallcover-title-desrc {
+  margin: 0 36rpx;
+  color: #ADADAD;
+  font-size: 26rpx;
+}
+
+.wallcover-flex {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 40rpx;
+}
+
+.fengrui-img-wall {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 60rpx;
+}
+
+.wallcover-btn {
+  background-image: linear-gradient(to right, #ed6ea0 0%, #ec8c69 100%) !important;
+  color: #ffffff !important;
+}
+
+.wall-video {
+  height: 100%;
+  width: 100%;
+}
+
+page {
+  background-color: #F1F1F1;
+}
