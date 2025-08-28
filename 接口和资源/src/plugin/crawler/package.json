@@ -1,0 +1,12 @@
+{
+  "name": "strapi-plugin-crawler",
+  "version": "0.1.0",
+  "description": "内容采集工具插件",
+  "strapi": {
+    "name": "crawler",
+    "displayName": "采集工具",
+    "description": "采集外部接口数据到 Strapi",
+    "kind": "plugin"
+  },
+  "main": "strapi-server.js"
+}
